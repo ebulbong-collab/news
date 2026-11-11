@@ -120,6 +120,9 @@ def fetch_articles(arts: list[dict], cfg: dict) -> list[Article]:
                 text = extract_body(r.content, max_chars, min_chars)
                 if len(text) >= min_chars:
                     art.source, art.text = "body", text
+                    if not art.pub:  # 피드에 날짜가 없는 언론사(한겨레 등)는 페이지 메타데이터에서 보충
+                        meta = trafilatura.extract_metadata(r.content)
+                        art.pub = (meta.date if meta and meta.date else None)
                 else:
                     art.note = f"본문 추출 {len(text)}자(기준 {min_chars}자 미만)"
         else:

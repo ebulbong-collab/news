@@ -79,6 +79,7 @@ def test_build_post():
     assert heads == ["## 한 줄 요약", "## 누가 받을 수 있나", "## 얼마나 받나", "## 언제까지 신청하나",
                      "## 어떻게 신청하나", "## 자주 묻는 질문", "## 문의처", "## 참고 기사"], heads
     assert "[경향신문](https://k.example/1)" in p.markdown            # 참고 기사: 언론사명 + 원문 링크
+    assert "utm_" not in write.build_post(extract.finalize_facts(FACTS, [Article("경향신문", "t", "https://k.example/1?utm_source=a", "2026-11-11", "body", SRC, "allowed")]), writer_out(False)).markdown
     assert write.MISSING in p.markdown.split("## 문의처")[1]          # 빈 문의처는 코드가 표준 문구로 대체
     assert write.MISSING in p.markdown.split("## 어떻게 신청하나")[1].split("##")[0]
     assert p.markdown.startswith("---\n") and not p.problems
@@ -93,6 +94,55 @@ def test_build_post():
     # 글쓰기 입력에는 출처(언론사·제목·링크)가 들어가지 않는다
     wi = write.writer_input(f2)
     assert "k.example" not in wi and "유류세 인하 연장" not in wi and "출처" not in wi
+
+
+def test_sanitize_dates():
+    # (c01 실제 사례) 기사에 없는 '12월 1일'을 모델이 추정해 넣은 경우 → 비운다. '내년 1월 말/1월 31일'은 근거가 있다.
+    text = "이달 말 종료될 예정이던 유류세 인하가 내년 1월 말까지 연장된다. 인하율은 내년 1월 31일까지 적용된다."
+    a = [Article("경향신문", "t", "https://k/1", "2026-11-11T10:14+09:00", "body", text, "allowed")]
+    f = extract.finalize_facts({**FACTS, "신청기간": {"시작": "2026-12-01", "마감": "2027-01-31"}, "시행일": "2026-12-01"}, a)
+    removed = extract.sanitize_dates(f, a)
+    assert [r["항목"] for r in removed] == ["신청기간.시작", "시행일"], removed
+    assert f["신청기간"] == {"시작": "", "마감": "2027-01-31"} and f["시행일"] == ""
+    assert "시행일" in f["기사에_없는_항목"] and "신청기간" not in f["기사에_없는_항목"]
+    # (횡성 실제 사례) '16일부터 접수 … 예산 소진 시까지' 에서 마감을 같은 날로 적은 경우 → 마감만 비운다
+    text2 = "횡성군은 16일 오전 10시부터 인터넷 홈페이지에서 신청을 받는다. 예산이 소진되면 마감된다."
+    a2 = [Article("경향신문", "t", "https://k/2", "2026-11-11T09:39+09:00", "body", text2, "allowed")]
+    f2 = extract.finalize_facts({**FACTS, "신청기간": {"시작": "2026-11-16", "마감": "2026-11-16"}, "시행일": ""}, a2)
+    removed2 = extract.sanitize_dates(f2, a2)
+    assert f2["신청기간"] == {"시작": "2026-11-16", "마감": ""} and len(removed2) == 1, (f2["신청기간"], removed2)
+    # 근거가 있으면 건드리지 않는다
+    f3 = extract.finalize_facts({**FACTS, "신청기간": {"시작": "2026-11-16", "마감": "2026-11-30"}}, a2 + [Article("뉴시스", "t", "u", "2026-11-11", "body", "30일까지 신청", "allowed")])
+    assert extract.sanitize_dates(f3, a2 + [Article("뉴시스", "t", "u", "2026-11-11", "body", "30일까지 신청", "allowed")]) == []
+
+
+def test_clean_url():
+    from common import clean_url
+    assert clean_url("https://k.example/a/?utm_source=khan_rss&utm_medium=rss&id=7#x") == "https://k.example/a/?id=7"
+    assert clean_url("https://n.example/view/NISX2026") == "https://n.example/view/NISX2026"
+
+
+def test_short_draft_accepted_without_rewrite():
+    """사실이 적어 800자에 못 미쳐도 하한(600자)을 넘고 겹침이 없으면 재작성 없이 통과한다(되풀이로 채우지 않음)."""
+    f = extract.finalize_facts(FACTS, arts())
+    n = next(n for n in range(0, 15) if 620 <= write.build_post(f, writer_out(False, n)).chars <= 780)
+    cfg = load_config()
+    calls = {"write": 0}
+
+    def fake_llm(cfg_, *, model, system, user, schema, effort, max_tokens, fallbacks=False):
+        usage = {"model": model, "served_model": model, "request_id": "r", "input_tokens": 10, "output_tokens": 10}
+        if schema is extract.EXTRACT_SCHEMA:
+            return dict(FACTS), usage
+        calls["write"] += 1
+        return writer_out(False, n), usage
+
+    extract.call_structured = write.call_structured = fake_llm
+    draft.fetch_articles = lambda picked, cfg_: arts()
+    cl = {"cluster_id": "c01", "label": "유류세", "eligible": True, "policy_related": True, "action": "new",
+          "articles": [{"id": "1", "publisher": "경향신문", "title": "t", "link": "l", "pub": None}]}
+    with tempfile.TemporaryDirectory() as tmp:
+        res = draft.process_cluster(cl, cfg, False, Path(tmp))
+    assert res["status"] == "drafted" and calls["write"] == 1 and "짧다" in res["reason"], res
 
 
 def test_fetch_helpers():
@@ -119,7 +169,7 @@ def test_pipeline_with_rewrite():
     def fake_llm(cfg_, *, model, system, user, schema, effort, max_tokens, fallbacks=False):
         usage = {"model": model, "served_model": model, "request_id": "req_test", "input_tokens": 1000, "output_tokens": 500}
         if schema is extract.EXTRACT_SCHEMA:
-            assert "<기사 번호=" in user and "경향신문" in user
+            assert "<기사 번호=" in user and "경향신문" in user and "묶음 주제: 유류세" in user
             return dict(FACTS), usage
         calls["write"] += 1
         # 첫 시도는 원문을 베낀 초안(유사도 초과), 재작성에서 새로 쓴 초안

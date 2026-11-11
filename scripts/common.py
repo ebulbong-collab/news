@@ -12,7 +12,7 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from urllib.parse import urldefrag, urlparse
+from urllib.parse import parse_qsl, urldefrag, urlencode, urlparse, urlsplit, urlunsplit
 from urllib.robotparser import RobotFileParser
 
 import requests
@@ -218,6 +218,13 @@ def entry_dt(e) -> datetime | None:
 
 def norm_link(link: str) -> str:
     return urldefrag((link or "").strip())[0]
+
+
+def clean_url(url: str) -> str:
+    """표시용 링크에서 추적 파라미터(utm_*)를 뺀다. 나머지 쿼리는 그대로 둔다."""
+    p = urlsplit(url)
+    q = [(k, v) for k, v in parse_qsl(p.query, keep_blank_values=True) if not k.lower().startswith("utm_")]
+    return urlunsplit((p.scheme, p.netloc, p.path, urlencode(q), ""))
 
 
 # ---------------------------------------------------------------- 키워드 필터

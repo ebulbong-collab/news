@@ -49,10 +49,10 @@ def cost_usd(usages: list[dict], cfg: dict) -> float:
 
 
 def build_feedback(issues: list[str], post: write.Post, flagged: list[str], lo: int, hi: int) -> str:
-    """재작성 지시. 원문은 넣지 않고, 문제가 된 '초안의' 문장만 돌려준다."""
+    """재작성 지시. 원문은 넣지 않고, 문제가 된 '초안의' 문장만 돌려준다. lo 는 하한(필수 분량)."""
     lines = ["이전 초안에 다음 문제가 있었다: " + " / ".join(issues)]
     if post.chars < lo:
-        lines.append(f"JSON 의 사실을 빠짐없이 풀어 쓰되 분량을 {lo}~{hi}자로 늘려라. 사실을 새로 만들어서 늘리지 마라.")
+        lines.append(f"JSON 의 사실을 빠짐없이 풀어 쓰되 분량을 {lo}자 이상으로 늘려라. 같은 내용을 되풀이하거나 사실을 새로 만들어서 늘리지 마라.")
     elif post.chars > hi:
         lines.append(f"분량을 {lo}~{hi}자로 줄여라.")
     if flagged:
@@ -89,8 +89,11 @@ def process_cluster(c: dict, cfg: dict, dev_single: bool, outdir: Path) -> dict:
     if len(pubs) < cfg["cluster"]["min_publishers"] and not res["dev_single_source"]:
         return finish("skipped", f"insufficient_sources: 원문을 확보한 언론사 {len(pubs)}곳 (기준 {cfg['cluster']['min_publishers']}곳)")
 
-    facts, u = extract.extract_facts(usable, cfg)
+    facts, u = extract.extract_facts(usable, cfg, c["label"])
     res["usages"].append(u)
+    removed = extract.sanitize_dates(facts, usable)
+    if removed:
+        res["removed_dates"] = removed
     write_json(cdir / "facts.json", facts)
     if facts["skip"]:
         return finish("skipped", f"irrelevant: {facts['이유']}")
@@ -109,17 +112,19 @@ def process_cluster(c: dict, cfg: dict, dev_single: bool, outdir: Path) -> dict:
         sim = similarity.check(post.prose, sources, threshold)
         res["attempts"].append({"attempt": attempt + 1, "chars": post.chars, "similarity": sim["union_ratio"],
                                 "problems": post.problems})
+        # 재작성 사유: 구성 문제, 유사도 초과, 분량이 하한(post_chars_min) 미만이거나 상한(hi) 초과.
+        # 800자(lo)는 소프트 목표다. 사실이 적을 때 같은 말을 되풀이해 채우지 않도록 재작성을 요구하지 않는다.
         issues = []
         if post.problems:
             issues.append("구성 문제: " + "; ".join(post.problems))
-        if not lo <= post.chars <= hi:
-            issues.append(f"분량 {post.chars}자 (목표 {lo}~{hi}자)")
+        if post.chars < d["post_chars_min"] or post.chars > hi:
+            issues.append(f"분량 {post.chars}자 (허용 {d['post_chars_min']}~{hi}자)")
         if not sim["passed"]:
             issues.append(f"원문과 5어절 겹침 {sim['union_ratio']:.1%} (기준 {threshold:.0%})")
         if not issues:
             break
         if attempt < d["max_rewrite"]:
-            feedback = build_feedback(issues, post, similarity.flagged_sentences(post.prose, sources), lo, hi)
+            feedback = build_feedback(issues, post, similarity.flagged_sentences(post.prose, sources), d["post_chars_min"], hi)
 
     res["similarity"] = sim
     res["chars"] = post.chars
@@ -135,7 +140,7 @@ def process_cluster(c: dict, cfg: dict, dev_single: bool, outdir: Path) -> dict:
         (cdir / "rejected.md").write_text(post.markdown, encoding="utf-8")
         return finish("discarded", f"too_short: {post.chars}자 < {d['post_chars_min']}자")
     (cdir / "post.md").write_text(post.markdown, encoding="utf-8")
-    return finish("drafted", "" if in_range else f"분량이 목표 범위를 벗어났다({post.chars}자, 목표 {lo}~{hi}자)")
+    return finish("drafted", "" if in_range else f"분량 {post.chars}자: 목표({lo}~{hi}자)보다 짧다(사실 항목이 적어 늘리지 않음)")
 
 
 # ---------------------------------------------------------------- 요약
