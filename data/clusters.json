@@ -1,17 +1,17 @@
 {
- "run_at": "2026-11-11T15:46+09:00",
+ "run_at": "2026-11-12T01:53+09:00",
  "model": "claude-haiku-5-5",
  "source": "model",
  "window_hours": 72,
  "min_publishers": 2,
  "stats": {
-  "n_candidates": 21,
-  "n_clusters": 17,
-  "n_single_article": 16,
-  "n_eligible": 1,
+  "n_candidates": 34,
+  "n_clusters": 25,
+  "n_single_article": 22,
+  "n_eligible": 2,
   "n_draft_candidates": 1,
-  "n_waiting": 16,
-  "n_waiting_policy": 12,
+  "n_waiting": 23,
+  "n_waiting_policy": 17,
   "fixes": {
    "out_of_range": 0,
    "duplicate": 0,
@@ -21,13 +21,13 @@
  "usage": {
   "model": "claude-haiku-5-5",
   "served_model": "claude-haiku-5-5",
-  "request_id": "req_011Cgvh4J5wirHmkgEiHmeHc",
-  "input_tokens": 2228,
-  "output_tokens": 1455
+  "request_id": "req_011CgwVJV5jRXkSPBskgJLu8",
+  "input_tokens": 2823,
+  "output_tokens": 2457
  },
  "clusters": [
   {
-   "label": "유류세 인하 2개월 연장 (내년 1월까지)",
+   "label": "유류세 인하 2개월 연장",
    "policy_related": true,
    "publishers": [
     "경향신문",
@@ -41,6 +41,20 @@
    "action": "new",
    "existing_topics": [],
    "articles": [
+    {
+     "id": "8e652730ca",
+     "publisher": "조선일보",
+     "title": "유류세 인하 내년 1월까지 2개월 연장",
+     "link": "https://www.chosun.com/economy/economy_general/2026/11/12/CG6C7RVOTRDQDEALBZ27MIMKBA/",
+     "pub": "2026-11-12T00:32+09:00"
+    },
+    {
+     "id": "c25488069c",
+     "publisher": "경향신문",
+     "title": "‘유류세 인하’ 내년 1월까지 연장키로",
+     "link": "https://www.khan.co.kr/article/202611112039035/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
+     "pub": "2026-11-11T20:39+09:00"
+    },
     {
      "id": "8d4b555102",
      "publisher": "한겨레신문",
@@ -80,16 +94,31 @@
    "cluster_id": "c01"
   },
   {
-   "label": "민생지원금 소비 효과 AI 예측 연구",
+   "label": "챗GPT 활용 소비쿠폰·지원금 효과 연구",
    "policy_related": false,
    "publishers": [
-    "조선일보"
+    "조선일보",
+    "천지일보"
    ],
-   "n_publishers": 1,
-   "eligible": false,
-   "action": "waiting",
+   "n_publishers": 2,
+   "eligible": true,
+   "action": "new",
    "existing_topics": [],
    "articles": [
+    {
+     "id": "5fc875c64f",
+     "publisher": "천지일보",
+     "title": "소비쿠폰 쓴 돈, 정말 ‘새 소비’였을까… GPT가 가려낸다",
+     "link": "https://www.newscj.com/news/articleView.html?idxno=3447962",
+     "pub": "2026-11-11T21:35+09:00"
+    },
+    {
+     "id": "303742be9e",
+     "publisher": "조선일보",
+     "title": "AI로 지원금 효과도 예측한다...챗GPT로 정책 효과 연구",
+     "link": "https://www.chosun.com/economy/tech_it/2026/11/11/3K2REDW4YFHDRGYVYEGARUMZGQ/",
+     "pub": "2026-11-11T18:06+09:00"
+    },
     {
      "id": "7b69383426",
      "publisher": "조선일보",
@@ -99,6 +128,181 @@
     }
    ],
    "cluster_id": "c02"
+  },
+  {
+   "label": "기후재난 재정 지원 촉구",
+   "policy_related": false,
+   "publishers": [
+    "경향신문"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "8b3ff64ca7",
+     "publisher": "경향신문",
+     "title": "“기후재난 위로 그만, 선진국들 재정 지원 의무 다하라”",
+     "link": "https://www.khan.co.kr/article/202611112141005/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+     "pub": "2026-11-11T21:41+09:00"
+    },
+    {
+     "id": "9b20849a97",
+     "publisher": "경향신문",
+     "title": "“기후재난 위로 그만, 선진국들 재정 지원 의무 다하라”",
+     "link": "https://www.khan.co.kr/article/202611112141005/?utm_source=khan_rss&utm_medium=rss&utm_campaign=society_news",
+     "pub": "2026-11-11T21:41+09:00"
+    }
+   ],
+   "cluster_id": "c03"
+  },
+  {
+   "label": "한양사이버대 위탁전형 수업료 감면",
+   "policy_related": true,
+   "publishers": [
+    "서울신문"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "203b5a2373",
+     "publisher": "서울신문",
+     "title": "한양사이버대학교, 군·산업체 위탁 전형 수업료 최대 50% 감면",
+     "link": "https://www.seoul.co.kr/news/newsView.php?id=20261112023001",
+     "pub": "2026-11-12T00:55+09:00"
+    }
+   ],
+   "cluster_id": "c04"
+  },
+  {
+   "label": "등기부등본 열람 수수료 인상",
+   "policy_related": true,
+   "publishers": [
+    "조선일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "7e1f0f3bf8",
+     "publisher": "조선일보",
+     "title": "등기부등본 열람 수수료 700→1100원 인상 “비용 부담, 서민에게 전가”… 5만명이 청원",
+     "link": "https://www.chosun.com/economy/real_estate/2026/11/12/L6NPPFRKCFH53HF4TFFQGSVYOM/",
+     "pub": "2026-11-12T00:32+09:00"
+    }
+   ],
+   "cluster_id": "c05"
+  },
+  {
+   "label": "충남도의회 교육위 서해안 교육현안 진단",
+   "policy_related": false,
+   "publishers": [
+    "천지일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "6a8ac4e186",
+     "publisher": "천지일보",
+     "title": "충남도의회 교육위, 서해안권 4개 교육지원청 교육현안 집중 진단",
+     "link": "https://www.newscj.com/news/articleView.html?idxno=3447986",
+     "pub": "2026-11-11T22:58+09:00"
+    }
+   ],
+   "cluster_id": "c06"
+  },
+  {
+   "label": "이용철 5.18 보상금 소송",
+   "policy_related": false,
+   "publishers": [
+    "천지일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "06d9772605",
+     "publisher": "천지일보",
+     "title": "이용철, 청와대 재직 때 ‘5.18 보상금’ 신청… 소송 끝에 패소",
+     "link": "https://www.newscj.com/news/articleView.html?idxno=3447976",
+     "pub": "2026-11-11T22:34+09:00"
+    }
+   ],
+   "cluster_id": "c07"
+  },
+  {
+   "label": "우체국 집배원 사학연금 수령자 안부 확인",
+   "policy_related": true,
+   "publishers": [
+    "천지일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "a99f414891",
+     "publisher": "천지일보",
+     "title": "우체국 집배원이 사학연금 수령자 안부 확인한다",
+     "link": "https://www.newscj.com/news/articleView.html?idxno=3447975",
+     "pub": "2026-11-11T22:09+09:00"
+    }
+   ],
+   "cluster_id": "c08"
+  },
+  {
+   "label": "게임 제작비 공제 형평성 논란",
+   "policy_related": true,
+   "publishers": [
+    "천지일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "a6a00a79fb",
+     "publisher": "천지일보",
+     "title": "수출 60%가 게임인데… 영화·OTT엔 있는 제작비 공제는 ‘남의 얘기’",
+     "link": "https://www.newscj.com/news/articleView.html?idxno=3447967",
+     "pub": "2026-11-11T21:39+09:00"
+    }
+   ],
+   "cluster_id": "c09"
+  },
+  {
+   "label": "빼빼로 데이 '빼난지원금' 캠페인",
+   "policy_related": false,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "402b8b3117",
+     "publisher": "뉴시스",
+     "title": "빼빼로 못 받았다면 주목…초등생이 만든 '빼난지원금' 정체는?",
+     "link": "https://www.newsis.com/view/NISX20261111_0003864469",
+     "pub": "2026-11-11T19:33+09:00"
+    }
+   ],
+   "cluster_id": "c10"
   },
   {
    "label": "하남시 정신건강 심리상담 바우처 재개",
@@ -119,10 +323,10 @@
      "pub": "2026-11-11T14:49+09:00"
     }
    ],
-   "cluster_id": "c03"
+   "cluster_id": "c11"
   },
   {
-   "label": "건강보험 본인부담금 환급금 확인 안내",
+   "label": "건강보험 본인부담금환급금 확인 안내",
    "policy_related": true,
    "publishers": [
     "뉴시스"
@@ -140,7 +344,7 @@
      "pub": "2026-11-11T14:45+09:00"
     }
    ],
-   "cluster_id": "c04"
+   "cluster_id": "c12"
   },
   {
    "label": "조재영 전북대 총장 후보 공약",
@@ -161,7 +365,7 @@
      "pub": "2026-11-11T14:41+09:00"
     }
    ],
-   "cluster_id": "c05"
+   "cluster_id": "c13"
   },
   {
    "label": "남해군 기본소득 시행 효과",
@@ -182,7 +386,7 @@
      "pub": "2026-11-11T13:52+09:00"
     }
    ],
-   "cluster_id": "c06"
+   "cluster_id": "c14"
   },
   {
    "label": "부안군 어업용 면세유 지원",
@@ -203,10 +407,10 @@
      "pub": "2026-11-11T11:42+09:00"
     }
    ],
-   "cluster_id": "c07"
+   "cluster_id": "c15"
   },
   {
-   "label": "제이비컴 희망리턴패키지 폐업 소상공인 지원",
+   "label": "희망리턴패키지 폐업 소상공인 지원",
    "policy_related": true,
    "publishers": [
     "서울신문"
@@ -224,10 +428,10 @@
      "pub": "2026-11-11T10:36+09:00"
     }
    ],
-   "cluster_id": "c08"
+   "cluster_id": "c16"
   },
   {
-   "label": "독일 신원비공개 출산과 보호출산제",
+   "label": "독일 신원 비공개 출산 제도와 한국 보호출산제",
    "policy_related": false,
    "publishers": [
     "일다"
@@ -245,10 +449,10 @@
      "pub": "2026-11-11T09:42+09:00"
     }
    ],
-   "cluster_id": "c09"
+   "cluster_id": "c17"
   },
   {
-   "label": "횡성군 반값 겨울 여행 지원",
+   "label": "횡성군 겨울 반값 여행 신청",
    "policy_related": true,
    "publishers": [
     "경향신문"
@@ -266,10 +470,10 @@
      "pub": "2026-11-11T09:39+09:00"
     }
    ],
-   "cluster_id": "c10"
+   "cluster_id": "c18"
   },
   {
-   "label": "에너지바우처 예산 미집행과 수급자 미지원",
+   "label": "에너지바우처 예산 잔액과 수급 사각지대",
    "policy_related": true,
    "publishers": [
     "뉴시스"
@@ -287,7 +491,7 @@
      "pub": "2026-11-11T07:00+09:00"
     }
    ],
-   "cluster_id": "c11"
+   "cluster_id": "c19"
   },
   {
    "label": "아동기본수당·출산지원금 미래기금 편성",
@@ -308,11 +512,11 @@
      "pub": "2026-11-10T21:07+09:00"
     }
    ],
-   "cluster_id": "c12"
+   "cluster_id": "c20"
   },
   {
-   "label": "필리핀 법인세 감면 혜택 칼럼",
-   "policy_related": false,
+   "label": "필리핀 법인세 감면법 혜택 기업",
+   "policy_related": true,
    "publishers": [
     "경향신문"
    ],
@@ -329,7 +533,7 @@
      "pub": "2026-11-10T20:15+09:00"
     }
    ],
-   "cluster_id": "c13"
+   "cluster_id": "c21"
   },
   {
    "label": "위기가구 생계비 30만원 우선지급",
@@ -350,7 +554,7 @@
      "pub": "2026-11-10T11:23+09:00"
     }
    ],
-   "cluster_id": "c14"
+   "cluster_id": "c22"
   },
   {
    "label": "비거주 1주택 종부세 공제 확대 요구",
@@ -371,10 +575,10 @@
      "pub": "2026-11-10T10:05+09:00"
     }
    ],
-   "cluster_id": "c15"
+   "cluster_id": "c23"
   },
   {
-   "label": "가업상속공제 개편 칼럼",
+   "label": "상속공제 개편 논란",
    "policy_related": true,
    "publishers": [
     "시사저널"
@@ -392,10 +596,10 @@
      "pub": "2026-11-10T09:15+09:00"
     }
    ],
-   "cluster_id": "c16"
+   "cluster_id": "c24"
   },
   {
-   "label": "육아휴직급여 월 50만원 지급 논란",
+   "label": "육아휴직급여 지급 차이 문제",
    "policy_related": true,
    "publishers": [
     "매일노동뉴스"
@@ -413,7 +617,7 @@
      "pub": "2026-11-10T06:30+09:00"
     }
    ],
-   "cluster_id": "c17"
+   "cluster_id": "c25"
   }
  ]
 }

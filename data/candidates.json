@@ -1,5 +1,175 @@
 [
  {
+  "id": "203b5a2373",
+  "publisher": "서울신문",
+  "feed": "society",
+  "title": "한양사이버대학교, 군·산업체 위탁 전형 수업료 최대 50% 감면",
+  "link": "https://www.seoul.co.kr/news/newsView.php?id=20261112023001",
+  "pub": "2026-11-12T00:55+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "감면"
+  ],
+  "first_seen": "2026-11-12T01:51+09:00"
+ },
+ {
+  "id": "8e652730ca",
+  "publisher": "조선일보",
+  "feed": "economy",
+  "title": "유류세 인하 내년 1월까지 2개월 연장",
+  "link": "https://www.chosun.com/economy/economy_general/2026/11/12/CG6C7RVOTRDQDEALBZ27MIMKBA/",
+  "pub": "2026-11-12T00:32+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "인하"
+  ],
+  "first_seen": "2026-11-12T01:51+09:00"
+ },
+ {
+  "id": "7e1f0f3bf8",
+  "publisher": "조선일보",
+  "feed": "economy",
+  "title": "등기부등본 열람 수수료 700→1100원 인상 “비용 부담, 서민에게 전가”… 5만명이 청원",
+  "link": "https://www.chosun.com/economy/real_estate/2026/11/12/L6NPPFRKCFH53HF4TFFQGSVYOM/",
+  "pub": "2026-11-12T00:32+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "인상"
+  ],
+  "first_seen": "2026-11-12T01:51+09:00"
+ },
+ {
+  "id": "6a8ac4e186",
+  "publisher": "천지일보",
+  "feed": "_all_",
+  "title": "충남도의회 교육위, 서해안권 4개 교육지원청 교육현안 집중 진단",
+  "link": "https://www.newscj.com/news/articleView.html?idxno=3447986",
+  "pub": "2026-11-11T22:58+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-12T01:51+09:00"
+ },
+ {
+  "id": "06d9772605",
+  "publisher": "천지일보",
+  "feed": "_all_",
+  "title": "이용철, 청와대 재직 때 ‘5.18 보상금’ 신청… 소송 끝에 패소",
+  "link": "https://www.newscj.com/news/articleView.html?idxno=3447976",
+  "pub": "2026-11-11T22:34+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-12T01:51+09:00"
+ },
+ {
+  "id": "a99f414891",
+  "publisher": "천지일보",
+  "feed": "_all_",
+  "title": "우체국 집배원이 사학연금 수령자 안부 확인한다",
+  "link": "https://www.newscj.com/news/articleView.html?idxno=3447975",
+  "pub": "2026-11-11T22:09+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "바우처"
+  ],
+  "first_seen": "2026-11-12T01:51+09:00"
+ },
+ {
+  "id": "8b3ff64ca7",
+  "publisher": "경향신문",
+  "feed": "_all_",
+  "title": "“기후재난 위로 그만, 선진국들 재정 지원 의무 다하라”",
+  "link": "https://www.khan.co.kr/article/202611112141005/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+  "pub": "2026-11-11T21:41+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-12T01:51+09:00"
+ },
+ {
+  "id": "9b20849a97",
+  "publisher": "경향신문",
+  "feed": "society",
+  "title": "“기후재난 위로 그만, 선진국들 재정 지원 의무 다하라”",
+  "link": "https://www.khan.co.kr/article/202611112141005/?utm_source=khan_rss&utm_medium=rss&utm_campaign=society_news",
+  "pub": "2026-11-11T21:41+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-12T01:51+09:00"
+ },
+ {
+  "id": "a6a00a79fb",
+  "publisher": "천지일보",
+  "feed": "_all_",
+  "title": "수출 60%가 게임인데… 영화·OTT엔 있는 제작비 공제는 ‘남의 얘기’",
+  "link": "https://www.newscj.com/news/articleView.html?idxno=3447967",
+  "pub": "2026-11-11T21:39+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "환급",
+   "감면"
+  ],
+  "first_seen": "2026-11-12T01:51+09:00"
+ },
+ {
+  "id": "5fc875c64f",
+  "publisher": "천지일보",
+  "feed": "_all_",
+  "title": "소비쿠폰 쓴 돈, 정말 ‘새 소비’였을까… GPT가 가려낸다",
+  "link": "https://www.newscj.com/news/articleView.html?idxno=3447962",
+  "pub": "2026-11-11T21:35+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-12T01:51+09:00"
+ },
+ {
+  "id": "c25488069c",
+  "publisher": "경향신문",
+  "feed": "economy",
+  "title": "‘유류세 인하’ 내년 1월까지 연장키로",
+  "link": "https://www.khan.co.kr/article/202611112039035/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
+  "pub": "2026-11-11T20:39+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "인하"
+  ],
+  "first_seen": "2026-11-12T01:51+09:00"
+ },
+ {
+  "id": "402b8b3117",
+  "publisher": "뉴시스",
+  "feed": "society",
+  "title": "빼빼로 못 받았다면 주목…초등생이 만든 '빼난지원금' 정체는?",
+  "link": "https://www.newsis.com/view/NISX20261111_0003864469",
+  "pub": "2026-11-11T19:33+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-12T01:51+09:00"
+ },
+ {
+  "id": "303742be9e",
+  "publisher": "조선일보",
+  "feed": "economy",
+  "title": "AI로 지원금 효과도 예측한다...챗GPT로 정책 효과 연구",
+  "link": "https://www.chosun.com/economy/tech_it/2026/11/11/3K2REDW4YFHDRGYVYEGARUMZGQ/",
+  "pub": "2026-11-11T18:06+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-12T01:51+09:00"
+ },
+ {
   "id": "8d4b555102",
   "publisher": "한겨레신문",
   "feed": "economy",
