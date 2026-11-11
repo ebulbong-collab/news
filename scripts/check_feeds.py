@@ -19,164 +19,20 @@ from __future__ import annotations
 import argparse
 import calendar
 import csv
-import email.utils
 import json
-import re
 import statistics
 import sys
-import threading
-import time
-from collections import Counter, defaultdict
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from urllib.parse import urldefrag, urlparse
-from urllib.robotparser import RobotFileParser
 
 import feedparser
-import requests
 import yaml
-from bs4 import BeautifulSoup
 
-ROOT = Path(__file__).resolve().parent.parent
-KST = timezone(timedelta(hours=9))
+from common import KST, ROOT, Fetcher, RobotsCache, clean_text, entry_dt, norm_link
+
 ROBOTS_SAMPLE_PER_FEED = 3
-
-
-# ---------------------------------------------------------------- 공통 도구
-class HostLimiter:
-    """같은 호스트에는 1초에 1회 이하로만 요청하도록 직렬화한다."""
-
-    def __init__(self, interval: float):
-        self.interval = interval
-        self._guard = threading.Lock()
-        self._locks: dict[str, threading.Lock] = defaultdict(threading.Lock)
-        self._last: dict[str, float] = {}
-
-    def get(self, session: requests.Session, url: str, **kw) -> requests.Response:
-        host = urlparse(url).netloc
-        with self._guard:
-            lock = self._locks[host]
-        with lock:
-            wait = self.interval - (time.monotonic() - self._last.get(host, 0.0))
-            if wait > 0:
-                time.sleep(wait)
-            try:
-                return session.get(url, **kw)
-            finally:
-                self._last[host] = time.monotonic()
-
-
-class Fetcher:
-    def __init__(self, cfg: dict):
-        h = cfg["http"]
-        self.session = requests.Session()
-        self.session.headers.update({"User-Agent": h["user_agent_check"], "Accept": "*/*"})
-        self.timeout = h["timeout_sec"]
-        self.limiter = HostLimiter(h["min_interval_sec"])
-
-    def get(self, url: str, retries: int = 1):
-        """(response | None, error 문자열 | None). 연결 오류·5xx 는 1회 재시도."""
-        last_err = None
-        for attempt in range(retries + 1):
-            try:
-                r = self.limiter.get(self.session, url, timeout=self.timeout, allow_redirects=True)
-                if r.status_code >= 500 and attempt < retries:
-                    time.sleep(2)
-                    continue
-                return r, None
-            except requests.exceptions.Timeout:
-                last_err = "timeout"
-            except requests.exceptions.SSLError as e:
-                last_err = f"ssl: {str(e)[:80]}"
-            except requests.exceptions.RequestException as e:
-                last_err = f"{type(e).__name__}: {str(e)[:80]}"
-            if attempt < retries:
-                time.sleep(2)
-        return None, last_err
-
-
-class RobotsCache:
-    """origin 별 robots.txt 를 한 번만 받아 판정한다."""
-
-    def __init__(self, fetcher: Fetcher, bot_token: str):
-        self.f = fetcher
-        self.token = bot_token
-        self._lock = threading.Lock()
-        self._cache: dict[str, dict] = {}
-
-    def _load(self, origin: str) -> dict:
-        r, err = self.f.get(origin + "/robots.txt", retries=0)
-        if r is None:
-            return {"status": f"error({err})", "rp": None, "mode": "unknown"}
-        code = r.status_code
-        if code == 200:
-            rp = RobotFileParser()
-            rp.parse(r.text.splitlines())
-            return {"status": "200", "rp": rp, "mode": "rules",
-                    "crawl_delay": rp.crawl_delay(self.token)}
-        if code in (401, 403):  # 표준 라이브러리와 같이 보수적으로 전부 금지로 본다
-            return {"status": str(code), "rp": None, "mode": "deny_all"}
-        if 400 <= code < 500:   # robots.txt 없음 → 제한 없음
-            return {"status": str(code), "rp": None, "mode": "allow_all"}
-        return {"status": str(code), "rp": None, "mode": "unknown"}
-
-    def check(self, url: str) -> tuple[str, str]:
-        """(판정, robots 상태). 판정: allowed | blocked | unknown"""
-        p = urlparse(url)
-        origin = f"{p.scheme}://{p.netloc}"
-        with self._lock:
-            if origin not in self._cache:
-                self._cache[origin] = self._load(origin)
-            info = self._cache[origin]
-        mode = info["mode"]
-        if mode == "allow_all":
-            return "allowed", info["status"]
-        if mode == "deny_all":
-            return "blocked", info["status"]
-        if mode == "unknown":
-            return "unknown", info["status"]
-        ok = info["rp"].can_fetch(self.token, url)
-        return ("allowed" if ok else "blocked"), info["status"]
-
-
-def clean_text(html: str) -> str:
-    return BeautifulSoup(html or "", "html.parser").get_text(" ", strip=True)
-
-
-TZ_RE = re.compile(r"(Z|GMT|UTC|UT|[+-]\d{2}:?\d{2}|\b[A-Z]{3,4})\s*$")
-
-
-def entry_dt(e) -> datetime | None:
-    """항목 발행 시각(UTC). 타임존 표기가 없는 날짜는 한국 시각(KST)으로 본다.
-
-    - feedparser 는 타임존 없는 날짜를 UTC 로 읽어 9시간 어긋나므로 되돌린다.
-    - 'Wed,11 Nov 2026 …' 처럼 쉼표 뒤 공백이 없는 형식은 feedparser 가 못 읽어 직접 파싱한다.
-    """
-    raw = (e.get("published") or e.get("updated") or "").strip()
-    t = e.get("published_parsed") or e.get("updated_parsed")
-    if t:
-        dt = datetime.fromtimestamp(calendar.timegm(t), tz=timezone.utc)
-        if raw and not TZ_RE.search(raw):
-            dt -= timedelta(hours=9)
-        return dt
-    if not raw:
-        return None
-    fixed = re.sub(r"^([A-Za-z]{3}),(\S)", r"\1, \2", raw)
-    try:
-        dt = email.utils.parsedate_to_datetime(fixed)
-    except (TypeError, ValueError):
-        try:
-            dt = datetime.fromisoformat(raw)
-        except ValueError:
-            return None
-    if dt.tzinfo is None:
-        dt = dt.replace(tzinfo=KST)
-    return dt.astimezone(timezone.utc)
-
-
-def norm_link(link: str) -> str:
-    return urldefrag(link.strip())[0]
 
 
 class Keywords:
@@ -462,7 +318,7 @@ def main():
                 specs.append(row)
     print(f"대상 피드 {len(specs)}개 / 언론사 {len({s['publisher'] for s in specs})}곳", file=sys.stderr)
 
-    fetcher = Fetcher(cfg)
+    fetcher = Fetcher(cfg, cfg["http"]["user_agent_check"])
     robots = RobotsCache(fetcher, cfg["http"]["bot_token"])
     with ThreadPoolExecutor(max_workers=args.workers) as ex:
         results = list(ex.map(lambda s: check_feed(s, cfg, fetcher, robots, kw, now), specs))

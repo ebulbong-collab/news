@@ -1,0 +1,74 @@
+name: draft
+
+# 초안 생성: 본문 가져오기 → 사실 추출 → 글 작성 → 유사도 검사 (지시서 3-4 ~ 3-6).
+# 2단계에서는 수동 실행만 한다. 결과는 아티팩트로만 남기고 저장소에 커밋하지 않는다(승인 전 초안이 main 에 올라가지 않게).
+# 하루 1회 예약 실행과 초안 PR 생성은 3단계에서 붙인다.
+on:
+  workflow_dispatch:
+    inputs:
+      clusters:
+        description: "처리할 묶음 ID(쉼표 구분, 예: c01,c03). 비우면 자동 선택"
+        required: false
+        default: ""
+      dev_single_source:
+        description: "개발용: 1개 언론사 묶음도 시험(발행 대상 아님)"
+        type: boolean
+        default: false
+      max_clusters:
+        description: "최대 묶음 수"
+        required: false
+        default: "5"
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: draft
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Draft
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLUSTERS: ${{ inputs.clusters }}
+          DEV_SINGLE: ${{ inputs.dev_single_source }}
+          MAX_CLUSTERS: ${{ inputs.max_clusters }}
+        run: |
+          [[ "$CLUSTERS" =~ ^[A-Za-z0-9,]*$ ]] || { echo "clusters 값이 올바르지 않다"; exit 1; }
+          [[ "${MAX_CLUSTERS:-5}" =~ ^[0-9]+$ ]] || { echo "max_clusters 값이 올바르지 않다"; exit 1; }
+          args=(--out out --max "${MAX_CLUSTERS:-5}")
+          [ -n "$CLUSTERS" ] && args+=(--clusters "$CLUSTERS")
+          [ "$DEV_SINGLE" = "true" ] && args+=(--dev-single-source)
+          python scripts/draft.py "${args[@]}"
+
+      - name: Job summary
+        if: always()
+        run: |
+          if [ -f out/summary.md ]; then cat out/summary.md >> "$GITHUB_STEP_SUMMARY"; fi
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: drafts
+          path: out
+          if-no-files-found: ignore
+
+      - name: Open issue on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "draft 실패 $(date -u +%F)" \
+            --body "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"

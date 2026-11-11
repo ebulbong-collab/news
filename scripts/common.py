@@ -13,6 +13,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urldefrag, urlparse
+from urllib.robotparser import RobotFileParser
 
 import requests
 import yaml
@@ -51,6 +52,15 @@ def parse_iso(s: str) -> datetime:
 
 
 # ---------------------------------------------------------------- HTTP
+def body_user_agent(cfg: dict) -> str:
+    """기사 본문 가져오기용 UA. site.url 이 아직 placeholder(.invalid)면 연락처 없는 UA 로 대신한다."""
+    url = cfg["site"]["url"]
+    host = (urlparse(url).hostname or "").lower()
+    if host.endswith(".invalid") or host in ("example.com", "example.org", "example.net"):
+        return cfg["http"]["user_agent"].split(" (")[0]
+    return cfg["http"]["user_agent"].format(site_url=url)
+
+
 class HostLimiter:
     """같은 호스트에는 min_interval 초에 1회 이하로만 요청하도록 직렬화한다."""
 
@@ -101,6 +111,51 @@ class Fetcher:
             if attempt < retries:
                 time.sleep(2)
         return None, last_err
+
+
+# ---------------------------------------------------------------- robots.txt
+class RobotsCache:
+    """origin 별 robots.txt 를 한 번만 받아 판정한다."""
+
+    def __init__(self, fetcher: Fetcher, bot_token: str):
+        self.f = fetcher
+        self.token = bot_token
+        self._lock = threading.Lock()
+        self._cache: dict[str, dict] = {}
+
+    def _load(self, origin: str) -> dict:
+        r, err = self.f.get(origin + "/robots.txt", retries=0)
+        if r is None:
+            return {"status": f"error({err})", "rp": None, "mode": "unknown"}
+        code = r.status_code
+        if code == 200:
+            rp = RobotFileParser()
+            rp.parse(r.text.splitlines())
+            return {"status": "200", "rp": rp, "mode": "rules",
+                    "crawl_delay": rp.crawl_delay(self.token)}
+        if code in (401, 403):  # 표준 라이브러리와 같이 보수적으로 전부 금지로 본다
+            return {"status": str(code), "rp": None, "mode": "deny_all"}
+        if 400 <= code < 500:   # robots.txt 없음 → 제한 없음
+            return {"status": str(code), "rp": None, "mode": "allow_all"}
+        return {"status": str(code), "rp": None, "mode": "unknown"}
+
+    def check(self, url: str) -> tuple[str, str]:
+        """(판정, robots 상태). 판정: allowed | blocked | unknown"""
+        p = urlparse(url)
+        origin = f"{p.scheme}://{p.netloc}"
+        with self._lock:
+            if origin not in self._cache:
+                self._cache[origin] = self._load(origin)
+            info = self._cache[origin]
+        mode = info["mode"]
+        if mode == "allow_all":
+            return "allowed", info["status"]
+        if mode == "deny_all":
+            return "blocked", info["status"]
+        if mode == "unknown":
+            return "unknown", info["status"]
+        ok = info["rp"].can_fetch(self.token, url)
+        return ("allowed" if ok else "blocked"), info["status"]
 
 
 # ---------------------------------------------------------------- 텍스트·날짜

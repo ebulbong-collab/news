@@ -15,7 +15,6 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -62,44 +61,15 @@ def render_titles(rows: list[dict]) -> str:
 
 # ---------------------------------------------------------------- Claude 호출
 def call_model(rows: list[dict], cfg: dict) -> tuple[dict, dict]:
-    """(groups JSON, usage). 429·5xx·연결 오류는 retry_wait_sec 간격으로 retry_count 회 재시도 후 예외."""
-    import anthropic  # API 를 쓰지 않는 경로(--groups-file)에서는 SDK 가 없어도 된다
+    """(groups JSON, usage). 재시도·거절 처리는 llm.call_structured 가 맡는다."""
+    from llm import call_structured  # API 를 쓰지 않는 경로(--groups-file)에서는 SDK 가 없어도 된다
 
     cc = cfg["cluster"]
-    model = cfg["models"]["cluster_extract"]
-    system = (ROOT / "prompts" / "cluster.md").read_text(encoding="utf-8")
-    client = anthropic.Anthropic(max_retries=0)  # 재시도는 아래에서 지시서 6-3 규칙대로 직접 한다
-
-    for attempt in range(cc["retry_count"] + 1):
-        try:
-            resp = client.messages.create(
-                model=model,
-                max_tokens=cc["max_tokens"],
-                system=system,
-                messages=[{"role": "user", "content": render_titles(rows)}],
-                output_config={"effort": cc["model_effort"],
-                               "format": {"type": "json_schema", "schema": GROUP_SCHEMA}},
-            )
-            break
-        except (anthropic.RateLimitError, anthropic.InternalServerError,
-                anthropic.APIConnectionError) as e:
-            if attempt >= cc["retry_count"]:
-                raise
-            print(f"[재시도 {attempt + 1}/{cc['retry_count']}] {type(e).__name__} — "
-                  f"{cc['retry_wait_sec']}초 후", file=sys.stderr)
-            time.sleep(cc["retry_wait_sec"])
-        except anthropic.APIStatusError as e:
-            if e.status_code == 529 and attempt < cc["retry_count"]:  # overloaded
-                time.sleep(cc["retry_wait_sec"])
-                continue
-            raise
-
-    if resp.stop_reason in ("refusal", "max_tokens"):
-        raise RuntimeError(f"모델 응답이 완결되지 않았다: stop_reason={resp.stop_reason}")
-    text = next(b.text for b in resp.content if b.type == "text")
-    usage = {"model": model, "request_id": getattr(resp, "_request_id", None),
-             "input_tokens": resp.usage.input_tokens, "output_tokens": resp.usage.output_tokens}
-    return json.loads(text), usage
+    return call_structured(
+        cfg, model=cfg["models"]["cluster_extract"],
+        system=(ROOT / "prompts" / "cluster.md").read_text(encoding="utf-8"),
+        user=render_titles(rows), schema=GROUP_SCHEMA,
+        effort=cc["model_effort"], max_tokens=cc["max_tokens"])
 
 
 # ---------------------------------------------------------------- 후처리
@@ -216,7 +186,7 @@ def write_report(path, result: dict, collect_log: list[dict]) -> None:
         L.append("")
         cov = collect_log[-1].get("coverage_hours", {})
         if cov:
-            L.append(f"가장 최근 수집에서 언론사별로 실제 관찰된 범위(시간): "
+            L.append("가장 최근 수집에서 언론사별로 실제 관찰된 범위(시간): "
                      + ", ".join(f"{p} {h:g}" for p, h in sorted(cov.items(), key=lambda x: x[1])))
             L.append("")
     path.parent.mkdir(parents=True, exist_ok=True)
