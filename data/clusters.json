@@ -1,5 +1,5 @@
 {
- "run_at": "2026-11-11T15:31+09:00",
+ "run_at": "2026-11-11T15:46+09:00",
  "model": "claude-haiku-5-5",
  "source": "model",
  "window_hours": 72,
@@ -11,7 +11,7 @@
   "n_eligible": 1,
   "n_draft_candidates": 1,
   "n_waiting": 16,
-  "n_waiting_policy": 14,
+  "n_waiting_policy": 12,
   "fixes": {
    "out_of_range": 0,
    "duplicate": 0,
@@ -20,13 +20,14 @@
  },
  "usage": {
   "model": "claude-haiku-5-5",
-  "request_id": "req_011CgvfwUvznCRF83Pk3Atao",
+  "served_model": "claude-haiku-5-5",
+  "request_id": "req_011Cgvh4J5wirHmkgEiHmeHc",
   "input_tokens": 2228,
-  "output_tokens": 1726
+  "output_tokens": 1455
  },
  "clusters": [
   {
-   "label": "유류세 인하 2개월 연장",
+   "label": "유류세 인하 2개월 연장 (내년 1월까지)",
    "policy_related": true,
    "publishers": [
     "경향신문",
@@ -79,8 +80,8 @@
    "cluster_id": "c01"
   },
   {
-   "label": "AI 민생지원금 소비효과 예측 연구",
-   "policy_related": true,
+   "label": "민생지원금 소비 효과 AI 예측 연구",
+   "policy_related": false,
    "publishers": [
     "조선일보"
    ],
@@ -100,7 +101,7 @@
    "cluster_id": "c02"
   },
   {
-   "label": "하남시 심리상담 바우처 재개",
+   "label": "하남시 정신건강 심리상담 바우처 재개",
    "policy_related": true,
    "publishers": [
     "프레시안"
@@ -205,7 +206,7 @@
    "cluster_id": "c07"
   },
   {
-   "label": "희망리턴패키지 폐업 소상공인 지원",
+   "label": "제이비컴 희망리턴패키지 폐업 소상공인 지원",
    "policy_related": true,
    "publishers": [
     "서울신문"
@@ -226,7 +227,7 @@
    "cluster_id": "c08"
   },
   {
-   "label": "독일 신원 비공개 출산과 보호출산제",
+   "label": "독일 신원비공개 출산과 보호출산제",
    "policy_related": false,
    "publishers": [
     "일다"
@@ -247,7 +248,7 @@
    "cluster_id": "c09"
   },
   {
-   "label": "횡성군 반값 여행 지원",
+   "label": "횡성군 반값 겨울 여행 지원",
    "policy_related": true,
    "publishers": [
     "경향신문"
@@ -268,7 +269,7 @@
    "cluster_id": "c10"
   },
   {
-   "label": "에너지바우처 예산 미집행 문제",
+   "label": "에너지바우처 예산 미집행과 수급자 미지원",
    "policy_related": true,
    "publishers": [
     "뉴시스"
@@ -310,8 +311,8 @@
    "cluster_id": "c12"
   },
   {
-   "label": "필리핀 법인세 감면법 혜택 칼럼",
-   "policy_related": true,
+   "label": "필리핀 법인세 감면 혜택 칼럼",
+   "policy_related": false,
    "publishers": [
     "경향신문"
    ],
@@ -352,7 +353,7 @@
    "cluster_id": "c14"
   },
   {
-   "label": "비거주 1주택 종부세 공제 확대 논의",
+   "label": "비거주 1주택 종부세 공제 확대 요구",
    "policy_related": true,
    "publishers": [
     "딴지일보"
@@ -373,7 +374,7 @@
    "cluster_id": "c15"
   },
   {
-   "label": "상속공제 개편 칼럼",
+   "label": "가업상속공제 개편 칼럼",
    "policy_related": true,
    "publishers": [
     "시사저널"
@@ -394,7 +395,7 @@
    "cluster_id": "c16"
   },
   {
-   "label": "육아휴직급여 월 50만원 적용 문제",
+   "label": "육아휴직급여 월 50만원 지급 논란",
    "policy_related": true,
    "publishers": [
     "매일노동뉴스"
