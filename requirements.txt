@@ -1,7 +1,5 @@
-feedparser>=6.0,<7
-requests>=2.32
-beautifulsoup4>=4.12
-pyyaml>=6.0
-anthropic>=2.8
-trafilatura>=2.0
+# 사이트 빌드용 최소 의존성 (Cloudflare Pages 가 이 파일을 설치한다).
+# 수집·초안 파이프라인용은 requirements-pipeline.txt.
 jinja2>=3.1
+markdown>=3.6
+pyyaml>=6.0

@@ -1,0 +1,35 @@
+{% macro badge(p) %}<span class="badge badge-{{ p.status.state }}">{{ p.status.label }}</span>{% endmacro %}
+
+{% macro meta(p) %}
+<span class="row-meta">
+  {% if p.region %}<span>{{ p.region }}</span>{% endif %}
+  {% if p.topic %}<span>{{ p.topic }}</span>{% endif %}
+  <span>{{ p.updated|kdate }} 수정</span>
+</span>
+{% endmacro %}
+
+{% macro row(p, show_status=True) %}
+<li>
+  <a class="row" href="{{ p.url|urlq }}">
+    <span class="row-main"><span class="row-title">{{ p.title }}</span>{{ meta(p) }}</span>
+    {% if show_status %}{{ badge(p) }}{% endif %}
+  </a>
+</li>
+{% endmacro %}
+
+{# 마감 순 목록: 왼쪽에 남은 일수를 크게 둔다 #}
+{% macro ladder_row(p) %}
+<li>
+  <a class="ladder-row" href="{{ p.url|urlq }}">
+    <span class="when when-{{ p.status.state }}">{{ p.status.label }}</span>
+    <span class="row-main">
+      <span class="row-title">{{ p.title }}</span>
+      <span class="row-meta">
+        {% if p.region %}<span>{{ p.region }}</span>{% endif %}
+        {% if p.topic %}<span>{{ p.topic }}</span>{% endif %}
+        <span>{{ p.deadline|kdate }}까지</span>
+      </span>
+    </span>
+  </a>
+</li>
+{% endmacro %}

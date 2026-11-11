@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }} | {{ site.name }}{% endblock %}
+{% block main %}
+<article class="prose">
+  <h1 class="page-title">{{ page.title }}</h1>
+  {{ page.html|safe }}
+  {% if page.updated %}<p class="stamp">마지막 수정 {{ page.updated|kdate }}</p>{% endif %}
+</article>
+{% endblock %}

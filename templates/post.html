@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge, row %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block head_extra %}
+<script type="application/ld+json">{{ jsonld|jsonld|safe }}</script>
+{% endblock %}
+{% block main %}
+<article class="post">
+  <nav class="crumbs" aria-label="현재 위치">
+    <a href="/">홈</a>
+    {% if region_url %}<a href="{{ region_url|urlq }}">{{ page.region }}</a>{% endif %}
+  </nav>
+  <h1>{{ page.title }}</h1>
+  <div class="post-meta">
+    {{ badge(page) }}
+    {% if page.deadline %}<span class="deadline-date">{{ page.deadline|kdate }}까지</span>{% endif %}
+    <span>{{ page.updated|kdate }} 수정</span>
+    {% if region_url %}<a href="{{ region_url|urlq }}">{{ page.region }}</a>{% endif %}
+    {% if topic_url %}<a href="{{ topic_url|urlq }}">{{ page.topic }}</a>{% endif %}
+  </div>
+  {{ page.html|safe }}
+</article>
+{{ ad_bottom|safe }}
+{% if related %}
+<section class="block related" aria-labelledby="h-rel">
+  <h2 id="h-rel">같은 지역·분야 글</h2>
+  <ul class="rows">
+    {% for p in related %}{{ row(p) }}{% endfor %}
+  </ul>
+</section>
+{% endif %}
+<aside class="how">
+  <p>이 글은 여러 언론사 기사에서 사실만 추려 정리하고, 사람이 확인한 뒤 올립니다. 만드는 방식은 <a href="/about/">소개</a>에 적어 두었습니다.</p>
+</aside>
+{% endblock %}

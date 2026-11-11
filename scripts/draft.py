@@ -63,13 +63,26 @@ def build_feedback(issues: list[str], post: write.Post, flagged: list[str], lo: 
 
 
 # ---------------------------------------------------------------- 묶음 1개 처리
-def process_cluster(c: dict, cfg: dict, dev_single: bool, outdir: Path) -> dict:
+def find_update_target(c: dict, topics: dict[str, dict]) -> dict | None:
+    """action 이 update 인 묶음이 가리키는, 실제로 발행된(content/posts 에 파일이 있는) 기존 글."""
+    if c.get("action") != "update":
+        return None
+    for tid in c.get("existing_topics", []):
+        t = topics.get(tid)
+        if t and (ROOT / "content" / "posts" / f"{t['slug']}.md").exists():
+            return t
+    return None
+
+
+def process_cluster(c: dict, cfg: dict, dev_single: bool, outdir: Path, topics: dict[str, dict] | None = None) -> dict:
     d = cfg["draft"]
     lo, hi = d["post_chars_target"]
     threshold = cfg["limits"]["similarity_threshold"]
     cdir = outdir / (("DEV-" if (dev_single and not c["eligible"]) else "") + c["cluster_id"])
     cdir.mkdir(parents=True, exist_ok=True)
+    target = find_update_target(c, topics or {})
     res: dict = {"cluster_id": c["cluster_id"], "label": c["label"], "status": "", "reason": "",
+                 "update_of": target["slug"] if target else None, "source_links": [],
                  "dev_single_source": bool(dev_single and not c["eligible"]),
                  "usages": [], "articles": [], "attempts": []}
 
@@ -83,6 +96,7 @@ def process_cluster(c: dict, cfg: dict, dev_single: bool, outdir: Path) -> dict:
     arts = fetch_articles(picked, cfg)
     res["articles"] = [a.info() for a in arts]
     usable = [a for a in arts if a.source != "none"]
+    res["source_links"] = [a.link for a in usable]   # topics.json 에 기록할 원래 링크(추적 파라미터 포함 그대로)
     pubs = {a.publisher for a in usable}
     if not usable:
         return finish("skipped", "no_text: 본문도 RSS 요약도 확보하지 못했다")
@@ -108,7 +122,8 @@ def process_cluster(c: dict, cfg: dict, dev_single: bool, outdir: Path) -> dict:
     for attempt in range(d["max_rewrite"] + 1):
         w, u = write.write_post(facts, cfg, feedback)
         res["usages"].append(u)
-        post = write.build_post(facts, w, datetime.now(KST))
+        post = write.build_post(facts, w, datetime.now(KST), slug=target["slug"] if target else None,
+                                published=target.get("published") if target else None)
         sim = similarity.check(post.prose, sources, threshold)
         res["attempts"].append({"attempt": attempt + 1, "chars": post.chars, "similarity": sim["union_ratio"],
                                 "problems": post.problems})
@@ -190,6 +205,7 @@ def main() -> int:
     clusters = read_json(ROOT / args.clusters_file, {}).get("clusters", [])
     ids = [x.strip() for x in args.clusters.split(",") if x.strip()]
     todo = select_clusters(clusters, ids, args.dev_single_source, max_n)
+    topics = {t["id"]: t for t in read_json(ROOT / "data" / "topics.json", [])}
     outdir = ROOT / args.out
     outdir.mkdir(parents=True, exist_ok=True)
     print(f"처리할 묶음 {len(todo)}개: {[c['cluster_id'] for c in todo]}", file=sys.stderr)
@@ -197,11 +213,11 @@ def main() -> int:
     results, aborted = [], None
     for c in todo:
         try:
-            r = process_cluster(c, cfg, args.dev_single_source, outdir)
+            r = process_cluster(c, cfg, args.dev_single_source, outdir, topics)
         except LLMError as e:  # 한 묶음의 거절·끊김은 그 묶음만 실패로 두고 계속한다
             r = {"cluster_id": c["cluster_id"], "label": c["label"], "status": "error", "reason": str(e),
                  "dev_single_source": bool(args.dev_single_source and not c["eligible"]),
-                 "usages": [], "articles": [], "attempts": []}
+                 "update_of": None, "source_links": [], "usages": [], "articles": [], "attempts": []}
         except (anthropic.APIStatusError, anthropic.APIConnectionError) as e:
             aborted = f"API 오류로 중단({type(e).__name__}) — 재시도 후에도 실패해 그날은 여기서 멈춘다"
             print(aborted, file=sys.stderr)

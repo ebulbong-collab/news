@@ -222,7 +222,9 @@ def main() -> int:
     if any(fixes.values()):
         print(f"[보정] 모델 출력 보정: {fixes}", file=sys.stderr)
 
-    clusters = build_clusters(groups, rows, read_json(DATA / "topics.json", []), cc["min_publishers"])
+    # 승인되지 않았거나 PR 에서 삭제된 초안의 주제는 '다룸'으로 치지 않는다: 발행된 글 파일이 있는 주제만 쓴다.
+    topics = [t for t in read_json(DATA / "topics.json", []) if (ROOT / "content" / "posts" / f"{t['slug']}.md").exists()]
+    clusters = build_clusters(groups, rows, topics, cc["min_publishers"])
     elig = [c for c in clusters if c["eligible"]]
     wait = [c for c in clusters if not c["eligible"]]
     stats = {

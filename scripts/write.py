@@ -40,6 +40,12 @@ WRITE_SCHEMA = {
     "additionalProperties": False,
 }
 
+TAX_LIKE = ("세금", "요금")   # 신청 절차가 없는 분야: 제목·목차 문구를 '적용' 기준으로 바꾼다
+HEADINGS = {
+    "default": {"target": "누가 받을 수 있나", "amount": "얼마나 받나", "period": "언제까지 신청하나", "howto": "어떻게 신청하나"},
+    "tax": {"target": "누가 해당하나", "amount": "금액은 어떻게 되나", "period": "언제까지 적용되나", "howto": "별도로 신청해야 하나"},
+}
+
 WRITER_KEYS = ["제도명", "주관기관", "지역", "지역명", "시도", "분야", "대상", "금액", "신청기간",
                "신청방법", "필요서류", "문의처", "시행일", "기사에_없는_항목"]
 
@@ -83,7 +89,9 @@ def _valid_date(s: str) -> str:
         return ""
 
 
-def build_post(facts: dict, w: dict, today: datetime | None = None) -> Post:
+def build_post(facts: dict, w: dict, today: datetime | None = None, slug: str | None = None,
+               published: str | None = None) -> Post:
+    """slug/published 를 주면 기존 글의 수정 초안이다: URL 과 최초 발행일을 유지하고 수정일만 오늘로 바꾼다(§5)."""
     today = today or datetime.now(KST)
     day = today.strftime("%Y-%m-%d")
     conflicts: dict[str, list[dict]] = {}
@@ -113,19 +121,23 @@ def build_post(facts: dict, w: dict, today: datetime | None = None) -> Post:
 
     deadline = _valid_date(facts["신청기간"].get("마감", ""))
     year = (deadline or day)[:4]
-    slug = w["slug"].strip().lower()
     problems: list[str] = []
-    if not SLUG_RE.match(slug):
+    fixed_slug = slug is not None
+    slug = slug if fixed_slug else w["slug"].strip().lower()
+    if not fixed_slug and not SLUG_RE.match(slug):
         slug = "policy-" + hashlib.sha1(facts["제도명"].encode()).hexdigest()[:8]
         problems.append("slug 형식이 맞지 않아 대체했다")
 
+    h = HEADINGS["tax" if facts["분야"] in TAX_LIKE else "default"]
+    title = (f"{facts['제도명']} 대상·금액·적용기간 ({year})" if facts["분야"] in TAX_LIKE
+             else f"{facts['제도명']} 신청방법·대상·금액 ({year})")
     meta = {
-        "title": f"{facts['제도명']} 신청방법·대상·금액 ({year})",
+        "title": title,
         "slug": slug,
         "region": facts["시도"],
         "topic": facts["분야"],
         "deadline": deadline,
-        "published": day,
+        "published": published or day,
         "updated": day,
         "sources": [{"name": s["언론사"], "url": s["링크"], "date": s["발행일"]} for s in facts["출처"]],
     }
@@ -134,10 +146,10 @@ def build_post(facts: dict, w: dict, today: datetime | None = None) -> Post:
     refs = "\n".join(f"- [{s['언론사']}]({s['링크']}) · {s['발행일'] or '날짜 미상'}" for s in facts["출처"])
     body = (
         f"## 한 줄 요약\n\n{sec['summary']}\n\n"
-        f"## 누가 받을 수 있나\n\n{sec['target']}\n\n"
-        f"## 얼마나 받나\n\n{sec['amount']}\n\n"
-        f"## 언제까지 신청하나\n\n{sec['period']}\n\n"
-        f"## 어떻게 신청하나\n\n{sec['howto']}\n\n"
+        f"## {h['target']}\n\n{sec['target']}\n\n"
+        f"## {h['amount']}\n\n{sec['amount']}\n\n"
+        f"## {h['period']}\n\n{sec['period']}\n\n"
+        f"## {h['howto']}\n\n{sec['howto']}\n\n"
         f"## 자주 묻는 질문\n\n{faq_md}\n\n"
         f"## 문의처\n\n{sec['contact']}\n\n"
         f"## 참고 기사\n\n{refs}\n"

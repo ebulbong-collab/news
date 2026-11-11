@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% from "_macros.html" import row %}
+{% block title %}{{ heading }} | {{ site.name }}{% endblock %}
+{% block main %}
+<h1 class="page-title">{{ heading }}</h1>
+<p class="lede">{{ intro }}</p>
+{% if items %}
+<ul class="rows">
+  {% for p in items %}{{ row(p, show_status) }}{% endfor %}
+</ul>
+{% else %}
+<p class="empty">아직 올라온 글이 없습니다.</p>
+{% endif %}
+{{ ad_list|safe }}
+{% endblock %}

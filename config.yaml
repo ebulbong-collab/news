@@ -3,6 +3,8 @@ site:
   name: "지원금소식"            # 가칭
   domain: "example.invalid"     # 미확정 placeholder. 확정 후 실제 도메인으로 교체
   url: "https://example.invalid"
+  contact_email: ""             # 정정 요청 연락처. 공개 전에 반드시 채운다(/about/ 에 표시)
+  tagline: "여러 기사에서 사실만 모아 대상·금액·기간으로 정리합니다"
 
 http:
   # 기사 본문 가져오기용 UA. 사이트 주소를 밝힌다(지시서 2-4). {site_url} 은 site.url 로 채운다.
@@ -33,6 +35,17 @@ limits:
   max_body_chars: 4000
   similarity_threshold: 0.10     # 5어절 겹침 비율 상한(운영하며 조정)
   min_post_chars: 600
+
+build:
+  soon_days: 7                   # 마감까지 이 일수 이하면 '마감 임박'
+  thin_list_min: 3               # 지역·분야 페이지는 글이 이 수 미만이면 noindex + 사이트맵 제외 (§4)
+  related_max: 3                 # 글 하단 관련 글 수 (§5)
+  sitemap_chunk: 5000            # 사이트맵 1개당 최대 URL
+
+ads:                             # 광고 코드는 글 30편·가이드 10편이 쌓인 뒤에 켠다 (§7)
+  enabled: false
+  adsense_client: ""             # 예: ca-pub-0000000000000000
+  slots: {mid: "", bottom: "", list: ""}
 
 collect:
   window_hours: 72               # 이보다 오래된 기사는 수집하지 않는다 (주제 묶기 대상 기간)

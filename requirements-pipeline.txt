@@ -1,0 +1,7 @@
+# 수집·묶기·초안 파이프라인(GitHub Actions)용. 사이트 빌드 의존성도 포함한다.
+-r requirements.txt
+feedparser>=6.0,<7
+requests>=2.32
+beautifulsoup4>=4.12
+anthropic>=2.8
+trafilatura>=2.0

@@ -74,14 +74,21 @@ def test_extract_helpers():
 def test_build_post():
     f = extract.finalize_facts(FACTS, arts())
     p = write.build_post(f, writer_out(False))
-    assert p.meta["title"] == "유류세 한시 인하 신청방법·대상·금액 (2027)" and p.meta["deadline"] == "2027-01-31"
+    # 세금·요금: 신청 절차가 없으므로 제목·목차를 '적용' 기준으로 바꾼다
+    assert p.meta["title"] == "유류세 한시 인하 대상·금액·적용기간 (2027)" and p.meta["deadline"] == "2027-01-31"
     heads = [l for l in p.markdown.splitlines() if l.startswith("## ")]
-    assert heads == ["## 한 줄 요약", "## 누가 받을 수 있나", "## 얼마나 받나", "## 언제까지 신청하나",
-                     "## 어떻게 신청하나", "## 자주 묻는 질문", "## 문의처", "## 참고 기사"], heads
+    assert heads == ["## 한 줄 요약", "## 누가 해당하나", "## 금액은 어떻게 되나", "## 언제까지 적용되나",
+                     "## 별도로 신청해야 하나", "## 자주 묻는 질문", "## 문의처", "## 참고 기사"], heads
+    # 지원금·바우처 등은 지시서 §3-5·§5 의 원래 목차와 제목을 쓴다
+    f_grant = extract.finalize_facts({**FACTS, "분야": "지원금"}, arts())
+    pg = write.build_post(f_grant, writer_out(False))
+    assert pg.meta["title"] == "유류세 한시 인하 신청방법·대상·금액 (2027)"
+    assert [l for l in pg.markdown.splitlines() if l.startswith("## ")][1:5] == [
+        "## 누가 받을 수 있나", "## 얼마나 받나", "## 언제까지 신청하나", "## 어떻게 신청하나"]
     assert "[경향신문](https://k.example/1)" in p.markdown            # 참고 기사: 언론사명 + 원문 링크
     assert "utm_" not in write.build_post(extract.finalize_facts(FACTS, [Article("경향신문", "t", "https://k.example/1?utm_source=a", "2026-11-11", "body", SRC, "allowed")]), writer_out(False)).markdown
     assert write.MISSING in p.markdown.split("## 문의처")[1]          # 빈 문의처는 코드가 표준 문구로 대체
-    assert write.MISSING in p.markdown.split("## 어떻게 신청하나")[1].split("##")[0]
+    assert write.MISSING in p.markdown.split("## 별도로 신청해야 하나")[1].split("##")[0]
     assert p.markdown.startswith("---\n") and not p.problems
     # 불일치는 표준 문구가 코드로 덧붙는다
     f2 = {**f, "기사간_불일치": [{"항목": "신청 마감일", "값들": ["2027-01-31", "2027-02-28"], "출처": ["경향신문"]}]}

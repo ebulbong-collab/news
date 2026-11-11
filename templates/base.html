@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ site.name }}{% endblock %}</title>
+{% if description %}
+<meta name="description" content="{{ description }}">
+{% endif %}
+{% if noindex %}
+<meta name="robots" content="noindex,follow">
+{% endif %}
+{% if canonical %}
+<link rel="canonical" href="{{ canonical }}">
+<meta property="og:url" content="{{ canonical }}">
+{% endif %}
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:type" content="{% block og_type %}website{% endblock %}">
+<meta property="og:title" content="{{ self.title() }}">
+{% if description %}
+<meta property="og:description" content="{{ description }}">
+{% endif %}
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/style.css">
+{% if ads_enabled %}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ adsense_client }}" crossorigin="anonymous"></script>
+{% endif %}
+{% block head_extra %}{% endblock %}
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="/">{{ site.name }}</a>
+    <nav aria-label="주요 메뉴">
+      <a href="/">최신 소식</a>
+      <a href="/deadline/">마감 임박</a>
+      {% if has_guides %}
+      <a href="/guide/">가이드</a>
+      {% endif %}
+      <a href="/about/">소개</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+{% block main %}{% endblock %}
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>여러 기사에서 사실만 모아 정리하고, 사람이 확인한 글만 올립니다. 잘못된 내용은 <a href="/about/#정정-요청">정정 요청</a>으로 알려 주세요.</p>
+    <p class="foot-links"><a href="/about/">소개</a><a href="/privacy/">개인정보처리방침</a></p>
+  </div>
+</footer>
+</body>
+</html>

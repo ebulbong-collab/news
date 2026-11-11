@@ -1,9 +1,13 @@
 name: draft
 
-# 초안 생성: 본문 가져오기 → 사실 추출 → 글 작성 → 유사도 검사 (지시서 3-4 ~ 3-6).
-# 2단계에서는 수동 실행만 한다. 결과는 아티팩트로만 남기고 저장소에 커밋하지 않는다(승인 전 초안이 main 에 올라가지 않게).
-# 하루 1회 예약 실행과 초안 PR 생성은 3단계에서 붙인다.
+# 초안 생성: 본문 가져오기 → 사실 추출 → 글 작성 → 유사도 검사 → (선택) 초안 PR (지시서 3-4 ~ 3-7).
+# - 예약 실행(KST 18:30, collect 의 18:00 묶기 뒤)은 저장소 변수 DRAFT_SCHEDULE_ENABLED 가 'true' 일 때만 동작한다.
+#   Settings → Secrets and variables → Actions → Variables 에서 켠다. 공개 전에는 꺼 둔다.
+# - 수동 실행은 open_pr 를 켜야 PR 을 만든다. 결과물은 항상 아티팩트로도 남는다.
+# - PR 은 자동 병합하지 않는다. 병합 = 발행이다.
 on:
+  schedule:
+    - cron: "30 9 * * *"   # KST 18:30
   workflow_dispatch:
     inputs:
       clusters:
@@ -15,12 +19,17 @@ on:
         type: boolean
         default: false
       max_clusters:
-        description: "최대 묶음 수"
+        description: "최대 묶음 수(비우면 하루 최대 편수)"
         required: false
         default: "5"
+      open_pr:
+        description: "초안 PR 을 만든다(개발용 묶음이 있으면 '병합 금지' 시험 PR 이 된다)"
+        type: boolean
+        default: false
 
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
   issues: write
 
 concurrency:
@@ -29,14 +38,18 @@ concurrency:
 
 jobs:
   draft:
+    if: github.event_name != 'schedule' || vars.DRAFT_SCHEDULE_ENABLED == 'true'
     runs-on: ubuntu-latest
+    env:
+      OPEN_PR: ${{ github.event_name == 'schedule' || inputs.open_pr }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
-      - run: pip install -r requirements.txt
+          cache-dependency-path: requirements-pipeline.txt
+      - run: pip install -r requirements-pipeline.txt
 
       - name: Draft
         env:
@@ -46,11 +59,22 @@ jobs:
           MAX_CLUSTERS: ${{ inputs.max_clusters }}
         run: |
           [[ "$CLUSTERS" =~ ^[A-Za-z0-9,]*$ ]] || { echo "clusters 값이 올바르지 않다"; exit 1; }
-          [[ "${MAX_CLUSTERS:-5}" =~ ^[0-9]+$ ]] || { echo "max_clusters 값이 올바르지 않다"; exit 1; }
-          args=(--out out --max "${MAX_CLUSTERS:-5}")
+          [[ "$MAX_CLUSTERS" =~ ^[0-9]*$ ]] || { echo "max_clusters 값이 올바르지 않다"; exit 1; }
+          args=(--out out)
+          [ -n "$MAX_CLUSTERS" ] && args+=(--max "$MAX_CLUSTERS")
           [ -n "$CLUSTERS" ] && args+=(--clusters "$CLUSTERS")
           [ "$DEV_SINGLE" = "true" ] && args+=(--dev-single-source)
           python scripts/draft.py "${args[@]}"
+
+      - name: Open PR
+        if: env.OPEN_PR == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEV_SINGLE: ${{ inputs.dev_single_source }}
+        run: |
+          args=(--out out)
+          [ "$DEV_SINGLE" = "true" ] && args+=(--allow-dev)
+          python scripts/open_pr.py "${args[@]}"
 
       - name: Job summary
         if: always()

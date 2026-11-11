@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% from "_macros.html" import ladder_row, row %}
+{% block title %}지원금 신청 마감 임박 | {{ site.name }}{% endblock %}
+{% block main %}
+<h1 class="page-title">신청 마감이 가까운 지원금</h1>
+<p class="lede">마감일이 가까운 순서입니다. 마감일이 정해지지 않은 글은 여기에 나오지 않습니다.</p>
+{% if upcoming %}
+<ol class="ladder">
+  {% for p in upcoming %}{{ ladder_row(p) }}{% endfor %}
+</ol>
+{% else %}
+<p class="empty">지금 신청을 받고 있는 글이 없습니다.</p>
+{% endif %}
+{% if closed %}
+<section class="block closed-list" aria-labelledby="h-closed">
+  <h2 id="h-closed">마감된 글</h2>
+  <ul class="rows">
+    {% for p in closed %}{{ row(p) }}{% endfor %}
+  </ul>
+</section>
+{% endif %}
+{{ ad_list|safe }}
+{% endblock %}

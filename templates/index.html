@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% from "_macros.html" import row, ladder_row %}
+{% block title %}지원금 소식 | {{ site.name }}{% endblock %}
+{% block main %}
+<h1 class="page-title">지원금·제도 변경 소식</h1>
+<p class="lede">{{ site.tagline }}</p>
+
+{% if total == 0 %}
+<p class="empty">아직 올라온 글이 없습니다. 검수를 마친 글부터 차례로 올라옵니다.</p>
+{% else %}
+  {% if upcoming %}
+  <section class="block" aria-labelledby="h-soon">
+    <h2 id="h-soon">마감이 가까운 순</h2>
+    <ol class="ladder">
+      {% for p in upcoming %}{{ ladder_row(p) }}{% endfor %}
+    </ol>
+    <p class="more"><a href="/deadline/">마감 임박 글 전체 보기</a></p>
+  </section>
+  {% endif %}
+
+  <section class="block" aria-labelledby="h-new">
+    <h2 id="h-new">새로 올라온 글</h2>
+    <ul class="rows">
+      {% for p in latest %}{{ row(p) }}{% endfor %}
+    </ul>
+  </section>
+
+  {% if nav_groups.region or nav_groups.topic %}
+  <section class="block" aria-labelledby="h-find">
+    <h2 id="h-find">지역·분야별로 찾기</h2>
+    {% for label, key in (("지역", "region"), ("분야", "topic")) %}
+      {% if nav_groups[key] %}
+      <p class="chip-label">{{ label }}</p>
+      <p class="chips">
+        {% for g in nav_groups[key] %}<a class="chip" href="{{ g.url|urlq }}">{{ g.name }}<span class="chip-n">{{ g.count }}</span></a>{% endfor %}
+      </p>
+      {% endif %}
+    {% endfor %}
+  </section>
+  {% endif %}
+{% endif %}
+{{ ad_list|safe }}
+{% endblock %}
