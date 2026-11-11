@@ -1,1 +1,26 @@
-[]
+[
+ {
+  "id": "health-insurance-copay-refund-guide",
+  "slug": "health-insurance-copay-refund-guide",
+  "label": "건강보험 본인부담금 환급금 확인 안내",
+  "created": "2026-11-11",
+  "published": "2026-11-11",
+  "source_links": [
+   "https://www.newsis.com/view/NISX20261111_0003863907"
+  ]
+ },
+ {
+  "id": "fuel-tax-cut-extension-2026",
+  "slug": "fuel-tax-cut-extension-2026",
+  "label": "유류세 인하 2개월 연장 (내년 1월까지)",
+  "created": "2026-11-11",
+  "published": "2026-11-11",
+  "source_links": [
+   "https://www.chosun.com/economy/economy_general/2026/11/11/SFZQV76FUJE47GTMVJ74LF6GSY/",
+   "https://www.hani.co.kr/arti/economy/economy_general/1286731.html",
+   "https://www.khan.co.kr/article/202611111014001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
+   "https://www.newsis.com/view/NISX20261110_0003862668",
+   "https://www.womennews.co.kr/news/articleView.html?idxno=284338"
+  ]
+ }
+]
