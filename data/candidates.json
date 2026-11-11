@@ -1,0 +1,277 @@
+[
+ {
+  "id": "8d4b555102",
+  "publisher": "한겨레신문",
+  "feed": "economy",
+  "title": "유류세 인하 내년 1월까지…중동전쟁 불확실성에 2개월 더 연장",
+  "link": "https://www.hani.co.kr/arti/economy/economy_general/1286731.html",
+  "pub": null,
+  "reason": "weak_ctx",
+  "hits": [
+   "인하"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "7b69383426",
+  "publisher": "조선일보",
+  "feed": "_all_",
+  "title": "민생지원금 소비 효과도 챗GPT로 예측… 오픈AI, AI 활용 정책 연구 공개",
+  "link": "https://www.chosun.com/economy/tech_it/2026/11/11/HA4TKNTGGVRTSMJQGRRTOZJVME/",
+  "pub": "2026-11-11T14:56+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "f6059b8cca",
+  "publisher": "프레시안",
+  "feed": "_all_",
+  "title": "하남시, 정신건강 심리상담 바우처사업 13일부터 재개",
+  "link": "https://www.pressian.com/pages/articles/2026111114490728857&ref=rss",
+  "pub": "2026-11-11T14:49+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "바우처"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "9328eb2fbb",
+  "publisher": "뉴시스",
+  "feed": "society",
+  "title": "\"잠자는 건강보험 본인부담금환급금 확인하세요\"",
+  "link": "https://www.newsis.com/view/NISX20261111_0003863907",
+  "pub": "2026-11-11T14:45+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "환급"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "73b44e9aae",
+  "publisher": "프레시안",
+  "feed": "_all_",
+  "title": "조재영 전북대 총장 후보, 이번엔 \"임기 내 수당 3천만원·주거단지 조성\"",
+  "link": "https://www.pressian.com/pages/articles/2026111114405042618&ref=rss",
+  "pub": "2026-11-11T14:41+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "수당"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "27566b2ad7",
+  "publisher": "여성신문",
+  "feed": "_all_",
+  "title": "경남 남해, 기본소득 시행 후 마을상점·마을돌봄 등 활성화",
+  "link": "https://www.womennews.co.kr/news/articleView.html?idxno=284344",
+  "pub": "2026-11-11T13:52+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "시행"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "20b21777e1",
+  "publisher": "천지일보",
+  "feed": "_all_",
+  "title": "부안군, 어업용 면세유 지원… 410어가 최대 300만원",
+  "link": "https://www.newscj.com/news/articleView.html?idxno=3447761",
+  "pub": "2026-11-11T11:42+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "지원금",
+   "신청 기간"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "7a2d91c6d3",
+  "publisher": "서울신문",
+  "feed": "economy",
+  "title": "제이비컴, ‘희망리턴패키지’로 폐업 소상공인 재도약 지원…취업교육부터 장려수당까지",
+  "link": "https://www.seoul.co.kr/news/newsView.php?id=20261111500091",
+  "pub": "2026-11-11T10:36+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "수당"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "e111efe00b",
+  "publisher": "여성신문",
+  "feed": "_all_",
+  "title": "유류세 인하 내년 1월까지 연장…휘발유 122원·경유 145원 인하 효과",
+  "link": "https://www.womennews.co.kr/news/articleView.html?idxno=284338",
+  "pub": "2026-11-11T10:32+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "인하"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "70d6ba86ad",
+  "publisher": "경향신문",
+  "feed": "economy",
+  "title": "유류세 인하 내년 1월까지 2개월 연장···휘발유 15%, 경유·부탄 25% 감경",
+  "link": "https://www.khan.co.kr/article/202611111014001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
+  "pub": "2026-11-11T10:14+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "인하"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "51f115a506",
+  "publisher": "일다",
+  "feed": "_all_",
+  "title": "독일 ‘신원 비공개 출산’ 12년, 한국 보호출산제에 던지는 질문",
+  "link": "https://www.ildaro.com/10589",
+  "pub": "2026-11-11T09:42+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "수당"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "1bbf0a9690",
+  "publisher": "경향신문",
+  "feed": "society",
+  "title": "“횡성으로 겨울 여행 오세요”…횡성군, 16일부터 ‘반값 여행’ 신청 접수",
+  "link": "https://www.khan.co.kr/article/202611110939001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=society_news",
+  "pub": "2026-11-11T09:39+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "신청 접수"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "e62f2640b7",
+  "publisher": "조선일보",
+  "feed": "economy",
+  "title": "유류세 인하 내년 1월까지 2개월 연장…“유류비 부담 경감 차원”",
+  "link": "https://www.chosun.com/economy/economy_general/2026/11/11/SFZQV76FUJE47GTMVJ74LF6GSY/",
+  "pub": "2026-11-11T09:14+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "인하"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "0f9039bd08",
+  "publisher": "뉴시스",
+  "feed": "economy",
+  "title": "유류세 인하 내년 1월까지 2개월 연장…휘발유 15%·경유 25% 유지",
+  "link": "https://www.newsis.com/view/NISX20261110_0003862668",
+  "pub": "2026-11-11T09:00+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "인하"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "36642a7cc4",
+  "publisher": "뉴시스",
+  "feed": "economy",
+  "title": "에너지바우처 예산 500억 남는데…기초수급 10곳 중 3곳 지원 못받아",
+  "link": "https://www.newsis.com/view/NISX20261110_0003862716",
+  "pub": "2026-11-11T07:00+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "바우처"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "bb555bc461",
+  "publisher": "경향신문",
+  "feed": "society",
+  "title": "아동기본수당·출산지원금도 ‘미래기금’으로 편성…재원 안정성 ‘물음표’",
+  "link": "https://www.khan.co.kr/article/202611102107015/?utm_source=khan_rss&utm_medium=rss&utm_campaign=society_news",
+  "pub": "2026-11-10T21:07+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "지원금",
+   "수당"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "2d3c485c09",
+  "publisher": "경향신문",
+  "feed": "economy",
+  "title": "[박병률의 더-이코노미스트]“필리핀 ‘법인세 감면’법 혜택받은 첫 해외기업은 삼성전기 현지 법인”",
+  "link": "https://www.khan.co.kr/article/202611102015005/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
+  "pub": "2026-11-10T20:15+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "감면"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "956f37b719",
+  "publisher": "조선일보",
+  "feed": "society",
+  "title": "내년부터 위기가구에 생계비 30만원 우선지급, 낙상노인 치료비도 지원",
+  "link": "https://www.chosun.com/national/welfare-medical/2026/11/10/LDQ5NWYN4RDFNA5B2KB5C3HEVY/",
+  "pub": "2026-11-10T11:23+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "지급"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "786271f484",
+  "publisher": "딴지일보",
+  "feed": "_all_",
+  "title": "[뉴공 아카이브]복덕위원회: 민주당, 비거주 1주택 종부세 공제 ‘14억 원’ 요구… 시장에 미칠 영향은? 종부세 올리면 전세 매물 줄어든다? 시장 데이터 팩트체크. 강남·서초 아파트값 13주째 하락… 공제 확대가 흐름 바꿀까? 서울 부동산 민심에 여당 의원들 ‘세 부담 완화’ 요구… 해법 될까?",
+  "link": "https://www.ddanzi.com/898578692",
+  "pub": "2026-11-10T10:05+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "감면"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "1e21c5532f",
+  "publisher": "시사저널",
+  "feed": "economy",
+  "title": "가업 지키라면서 혁신은 막나…상속공제 개편의 역설[라정주의 경제터치]",
+  "link": "https://www.sisajournal.com/news/articleView.html?idxno=393404",
+  "pub": "2026-11-10T09:15+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "개편"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ },
+ {
+  "id": "ef60574664",
+  "publisher": "매일노동뉴스",
+  "feed": "_all_",
+  "title": "육아휴직급여 월 50만원 ‘제멋대로’ 사립대병원",
+  "link": "https://www.labortoday.co.kr/news/articleView.html?idxno=237634",
+  "pub": "2026-11-10T06:30+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "수당"
+  ],
+  "first_seen": "2026-11-11T15:03+09:00"
+ }
+]

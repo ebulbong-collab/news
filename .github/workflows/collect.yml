@@ -1,0 +1,59 @@
+name: collect
+
+# 하루 3회 수집 (KST 07:00, 12:00, 18:00). cron 은 UTC 기준이다.
+# 18:00 KST 실행에서는 수집 뒤 주제 묶기까지 돌려 1단계 관찰 결과(reports/stage1_cluster_report.md)를 갱신한다.
+on:
+  schedule:
+    - cron: "0 22 * * *"   # KST 07:00
+    - cron: "0 3 * * *"    # KST 12:00
+    - cron: "0 9 * * *"    # KST 18:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Collect
+        run: python scripts/collect.py
+
+      - name: Cluster (18:00 KST 실행 또는 수동 실행)
+        if: github.event.schedule == '0 9 * * *' || github.event_name == 'workflow_dispatch'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/cluster.py --report reports/stage1_cluster_report.md
+
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data reports
+          if git diff --cached --quiet; then
+            echo "변경 없음"
+          else
+            git commit -m "data: collect $(date -u +%F\ %H:%M) UTC"
+            git push
+          fi
+
+      - name: Open issue on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "collect 실패 $(date -u +%F)" \
+            --body "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"

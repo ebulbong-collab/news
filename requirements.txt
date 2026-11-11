@@ -1,0 +1,6 @@
+feedparser>=6.0,<7
+requests>=2.32
+beautifulsoup4>=4.12
+pyyaml>=6.0
+anthropic>=2.8
+jinja2>=3.1

@@ -1,0 +1,413 @@
+{
+ "run_at": "2026-11-11T15:06+09:00",
+ "model": "claude-haiku-5-5",
+ "source": "Claude Code 서브에이전트(haiku 계열)에 prompts/cluster.md 와 같은 지시문·같은 제목 목록을 준 결과. Messages API 호출 경로는 검증되지 않았다",
+ "window_hours": 72,
+ "min_publishers": 2,
+ "stats": {
+  "n_candidates": 21,
+  "n_clusters": 17,
+  "n_single_article": 16,
+  "n_eligible": 1,
+  "n_draft_candidates": 1,
+  "n_waiting": 16,
+  "n_waiting_policy": 11,
+  "fixes": {
+   "out_of_range": 0,
+   "duplicate": 0,
+   "missing": 0
+  }
+ },
+ "usage": null,
+ "clusters": [
+  {
+   "label": "유류세 인하 2개월 연장",
+   "policy_related": true,
+   "publishers": [
+    "경향신문",
+    "뉴시스",
+    "여성신문",
+    "조선일보",
+    "한겨레신문"
+   ],
+   "n_publishers": 5,
+   "eligible": true,
+   "action": "new",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "8d4b555102",
+     "publisher": "한겨레신문",
+     "title": "유류세 인하 내년 1월까지…중동전쟁 불확실성에 2개월 더 연장",
+     "link": "https://www.hani.co.kr/arti/economy/economy_general/1286731.html",
+     "pub": null
+    },
+    {
+     "id": "e111efe00b",
+     "publisher": "여성신문",
+     "title": "유류세 인하 내년 1월까지 연장…휘발유 122원·경유 145원 인하 효과",
+     "link": "https://www.womennews.co.kr/news/articleView.html?idxno=284338",
+     "pub": "2026-11-11T10:32+09:00"
+    },
+    {
+     "id": "70d6ba86ad",
+     "publisher": "경향신문",
+     "title": "유류세 인하 내년 1월까지 2개월 연장···휘발유 15%, 경유·부탄 25% 감경",
+     "link": "https://www.khan.co.kr/article/202611111014001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
+     "pub": "2026-11-11T10:14+09:00"
+    },
+    {
+     "id": "e62f2640b7",
+     "publisher": "조선일보",
+     "title": "유류세 인하 내년 1월까지 2개월 연장…“유류비 부담 경감 차원”",
+     "link": "https://www.chosun.com/economy/economy_general/2026/11/11/SFZQV76FUJE47GTMVJ74LF6GSY/",
+     "pub": "2026-11-11T09:14+09:00"
+    },
+    {
+     "id": "0f9039bd08",
+     "publisher": "뉴시스",
+     "title": "유류세 인하 내년 1월까지 2개월 연장…휘발유 15%·경유 25% 유지",
+     "link": "https://www.newsis.com/view/NISX20261110_0003862668",
+     "pub": "2026-11-11T09:00+09:00"
+    }
+   ],
+   "cluster_id": "c01"
+  },
+  {
+   "label": "민생지원금 소비효과 AI 예측 연구",
+   "policy_related": true,
+   "publishers": [
+    "조선일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "7b69383426",
+     "publisher": "조선일보",
+     "title": "민생지원금 소비 효과도 챗GPT로 예측… 오픈AI, AI 활용 정책 연구 공개",
+     "link": "https://www.chosun.com/economy/tech_it/2026/11/11/HA4TKNTGGVRTSMJQGRRTOZJVME/",
+     "pub": "2026-11-11T14:56+09:00"
+    }
+   ],
+   "cluster_id": "c02"
+  },
+  {
+   "label": "하남시 정신건강 심리상담 바우처 재개",
+   "policy_related": true,
+   "publishers": [
+    "프레시안"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "f6059b8cca",
+     "publisher": "프레시안",
+     "title": "하남시, 정신건강 심리상담 바우처사업 13일부터 재개",
+     "link": "https://www.pressian.com/pages/articles/2026111114490728857&ref=rss",
+     "pub": "2026-11-11T14:49+09:00"
+    }
+   ],
+   "cluster_id": "c03"
+  },
+  {
+   "label": "건강보험 본인부담금 환급금 확인 안내",
+   "policy_related": true,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "9328eb2fbb",
+     "publisher": "뉴시스",
+     "title": "\"잠자는 건강보험 본인부담금환급금 확인하세요\"",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863907",
+     "pub": "2026-11-11T14:45+09:00"
+    }
+   ],
+   "cluster_id": "c04"
+  },
+  {
+   "label": "전북대 총장 후보 공약",
+   "policy_related": false,
+   "publishers": [
+    "프레시안"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "73b44e9aae",
+     "publisher": "프레시안",
+     "title": "조재영 전북대 총장 후보, 이번엔 \"임기 내 수당 3천만원·주거단지 조성\"",
+     "link": "https://www.pressian.com/pages/articles/2026111114405042618&ref=rss",
+     "pub": "2026-11-11T14:41+09:00"
+    }
+   ],
+   "cluster_id": "c05"
+  },
+  {
+   "label": "남해군 기본소득 시행 후 마을 활성화",
+   "policy_related": true,
+   "publishers": [
+    "여성신문"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "27566b2ad7",
+     "publisher": "여성신문",
+     "title": "경남 남해, 기본소득 시행 후 마을상점·마을돌봄 등 활성화",
+     "link": "https://www.womennews.co.kr/news/articleView.html?idxno=284344",
+     "pub": "2026-11-11T13:52+09:00"
+    }
+   ],
+   "cluster_id": "c06"
+  },
+  {
+   "label": "부안군 어업용 면세유 지원",
+   "policy_related": true,
+   "publishers": [
+    "천지일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "20b21777e1",
+     "publisher": "천지일보",
+     "title": "부안군, 어업용 면세유 지원… 410어가 최대 300만원",
+     "link": "https://www.newscj.com/news/articleView.html?idxno=3447761",
+     "pub": "2026-11-11T11:42+09:00"
+    }
+   ],
+   "cluster_id": "c07"
+  },
+  {
+   "label": "희망리턴패키지 폐업 소상공인 지원",
+   "policy_related": true,
+   "publishers": [
+    "서울신문"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "7a2d91c6d3",
+     "publisher": "서울신문",
+     "title": "제이비컴, ‘희망리턴패키지’로 폐업 소상공인 재도약 지원…취업교육부터 장려수당까지",
+     "link": "https://www.seoul.co.kr/news/newsView.php?id=20261111500091",
+     "pub": "2026-11-11T10:36+09:00"
+    }
+   ],
+   "cluster_id": "c08"
+  },
+  {
+   "label": "독일 신원 비공개 출산과 보호출산제 비교",
+   "policy_related": false,
+   "publishers": [
+    "일다"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "51f115a506",
+     "publisher": "일다",
+     "title": "독일 ‘신원 비공개 출산’ 12년, 한국 보호출산제에 던지는 질문",
+     "link": "https://www.ildaro.com/10589",
+     "pub": "2026-11-11T09:42+09:00"
+    }
+   ],
+   "cluster_id": "c09"
+  },
+  {
+   "label": "횡성군 반값 여행 신청 접수",
+   "policy_related": true,
+   "publishers": [
+    "경향신문"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "1bbf0a9690",
+     "publisher": "경향신문",
+     "title": "“횡성으로 겨울 여행 오세요”…횡성군, 16일부터 ‘반값 여행’ 신청 접수",
+     "link": "https://www.khan.co.kr/article/202611110939001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=society_news",
+     "pub": "2026-11-11T09:39+09:00"
+    }
+   ],
+   "cluster_id": "c10"
+  },
+  {
+   "label": "에너지바우처 예산 미사용과 수급 사각지대",
+   "policy_related": true,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "36642a7cc4",
+     "publisher": "뉴시스",
+     "title": "에너지바우처 예산 500억 남는데…기초수급 10곳 중 3곳 지원 못받아",
+     "link": "https://www.newsis.com/view/NISX20261110_0003862716",
+     "pub": "2026-11-11T07:00+09:00"
+    }
+   ],
+   "cluster_id": "c11"
+  },
+  {
+   "label": "아동기본수당·출산지원금 미래기금 편성",
+   "policy_related": true,
+   "publishers": [
+    "경향신문"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "bb555bc461",
+     "publisher": "경향신문",
+     "title": "아동기본수당·출산지원금도 ‘미래기금’으로 편성…재원 안정성 ‘물음표’",
+     "link": "https://www.khan.co.kr/article/202611102107015/?utm_source=khan_rss&utm_medium=rss&utm_campaign=society_news",
+     "pub": "2026-11-10T21:07+09:00"
+    }
+   ],
+   "cluster_id": "c12"
+  },
+  {
+   "label": "필리핀 법인세 감면법 칼럼",
+   "policy_related": false,
+   "publishers": [
+    "경향신문"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "2d3c485c09",
+     "publisher": "경향신문",
+     "title": "[박병률의 더-이코노미스트]“필리핀 ‘법인세 감면’법 혜택받은 첫 해외기업은 삼성전기 현지 법인”",
+     "link": "https://www.khan.co.kr/article/202611102015005/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
+     "pub": "2026-11-10T20:15+09:00"
+    }
+   ],
+   "cluster_id": "c13"
+  },
+  {
+   "label": "위기가구 생계비 30만원 우선지급",
+   "policy_related": true,
+   "publishers": [
+    "조선일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "956f37b719",
+     "publisher": "조선일보",
+     "title": "내년부터 위기가구에 생계비 30만원 우선지급, 낙상노인 치료비도 지원",
+     "link": "https://www.chosun.com/national/welfare-medical/2026/11/10/LDQ5NWYN4RDFNA5B2KB5C3HEVY/",
+     "pub": "2026-11-10T11:23+09:00"
+    }
+   ],
+   "cluster_id": "c14"
+  },
+  {
+   "label": "비거주 1주택 종부세 공제 확대 논쟁",
+   "policy_related": false,
+   "publishers": [
+    "딴지일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "786271f484",
+     "publisher": "딴지일보",
+     "title": "[뉴공 아카이브]복덕위원회: 민주당, 비거주 1주택 종부세 공제 ‘14억 원’ 요구… 시장에 미칠 영향은? 종부세 올리면 전세 매물 줄어든다? 시장 데이터 팩트체크. 강남·서초 아파트값 13주째 하락… 공제 확대가 흐름 바꿀까? 서울 부동산 민심에 여당 의원들 ‘세 부담 완화’ 요구… 해법 될까?",
+     "link": "https://www.ddanzi.com/898578692",
+     "pub": "2026-11-10T10:05+09:00"
+    }
+   ],
+   "cluster_id": "c15"
+  },
+  {
+   "label": "상속공제 개편 칼럼",
+   "policy_related": true,
+   "publishers": [
+    "시사저널"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "1e21c5532f",
+     "publisher": "시사저널",
+     "title": "가업 지키라면서 혁신은 막나…상속공제 개편의 역설[라정주의 경제터치]",
+     "link": "https://www.sisajournal.com/news/articleView.html?idxno=393404",
+     "pub": "2026-11-10T09:15+09:00"
+    }
+   ],
+   "cluster_id": "c16"
+  },
+  {
+   "label": "사립대병원 육아휴직급여 미지급 논란",
+   "policy_related": false,
+   "publishers": [
+    "매일노동뉴스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "ef60574664",
+     "publisher": "매일노동뉴스",
+     "title": "육아휴직급여 월 50만원 ‘제멋대로’ 사립대병원",
+     "link": "https://www.labortoday.co.kr/news/articleView.html?idxno=237634",
+     "pub": "2026-11-10T06:30+09:00"
+    }
+   ],
+   "cluster_id": "c17"
+  }
+ ]
+}

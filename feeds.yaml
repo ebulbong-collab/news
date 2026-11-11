@@ -1,0 +1,255 @@
+# RSS 피드 목록. enabled 는 0단계 검증 결과로 채웠다.
+# 각 항목: 언론사명, 카테고리, 주소, 사용 여부
+feeds:
+  - publisher: "경향신문"
+    category: "_all_"
+    url: https://www.khan.co.kr/rss/rssdata/total_news.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "경향신문"
+    category: "economy"
+    url: https://www.khan.co.kr/rss/rssdata/economy_news.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "경향신문"
+    category: "society"
+    url: https://www.khan.co.kr/rss/rssdata/society_news.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "국민일보"
+    category: "_all_"
+    url: http://rss.kmib.co.kr/data/kmibRssAll.xml
+    enabled: false
+    # 제외 사유: FAIL 연결 실패(프록시/서버 무응답)
+    robots: "-"
+  - publisher: "국민일보"
+    category: "economy"
+    url: http://rss.kmib.co.kr/data/kmibEcoRss.xml
+    enabled: false
+    # 제외 사유: FAIL 연결 실패(프록시/서버 무응답)
+    robots: "-"
+  - publisher: "국민일보"
+    category: "society"
+    url: http://rss.kmib.co.kr/data/kmibSocRss.xml
+    enabled: false
+    # 제외 사유: FAIL 연결 실패(프록시/서버 무응답)
+    robots: "-"
+  - publisher: "뉴시스"
+    category: "economy"
+    url: https://newsis.com/RSS/bank.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "뉴시스"
+    category: "economy"
+    url: https://newsis.com/RSS/economy.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "뉴시스"
+    category: "economy"
+    url: https://newsis.com/RSS/industry.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "뉴시스"
+    category: "society"
+    url: https://newsis.com/RSS/society.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "동아일보"
+    category: "_all_"
+    url: https://rss.donga.com/total.xml
+    enabled: false
+    # 제외 사유: FAIL 시간 초과
+    robots: "-"
+  - publisher: "동아일보"
+    category: "economy"
+    url: https://rss.donga.com/economy.xml
+    enabled: false
+    # 제외 사유: FAIL 연결 실패(프록시/서버 무응답)
+    robots: "-"
+  - publisher: "동아일보"
+    category: "society"
+    url: https://rss.donga.com/national.xml
+    enabled: false
+    # 제외 사유: FAIL 시간 초과
+    robots: "-"
+  - publisher: "딴지일보"
+    category: "_all_"
+    url: https://www.ddanzi.com/rss
+    enabled: true
+    robots: "금지(200)"
+  - publisher: "매일노동뉴스"
+    category: "_all_"
+    url: https://www.labortoday.co.kr/rss/allArticle.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "미디어오늘"
+    category: "_all_"
+    url: https://www.mediatoday.co.kr/rss/allArticle.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "미디어오늘"
+    category: "economy"
+    url: https://www.mediatoday.co.kr/rss/S1N3.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "미디어오늘"
+    category: "society"
+    url: https://www.mediatoday.co.kr/rss/S1N4.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "서울신문"
+    category: "economy"
+    url: https://www.seoul.co.kr/xml/rss/rss_economy.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "서울신문"
+    category: "society"
+    url: https://www.seoul.co.kr/xml/rss/rss_society.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "세계일보"
+    category: "_all_"
+    url: http://www.segye.com/Articles/RSSList/segye_recent.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "세계일보"
+    category: "economy"
+    url: http://www.segye.com/Articles/RSSList/segye_economy.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "세계일보"
+    category: "society"
+    url: http://www.segye.com/Articles/RSSList/segye_society.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "시사인"
+    category: "_all_"
+    url: https://www.sisain.co.kr/rss/allArticle.xml
+    enabled: false
+    # 제외 사유: STALE 최신 항목이 876일 전
+    robots: "불명(error(timeout))"
+  - publisher: "시사인"
+    category: "economy"
+    url: https://www.sisain.co.kr/rss/S1N7.xml
+    enabled: false
+    # 제외 사유: STALE 최신 항목이 1330일 전
+    robots: "불명(error(timeout))"
+  - publisher: "시사인"
+    category: "society"
+    url: https://www.sisain.co.kr/rss/S1N8.xml
+    enabled: false
+    # 제외 사유: STALE 최신 항목이 1330일 전
+    robots: "불명(error(timeout))"
+  - publisher: "시사저널"
+    category: "_all_"
+    url: http://www.sisajournal.com/rss/allArticle.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "시사저널"
+    category: "economy"
+    url: http://www.sisajournal.com/rss/S1N54.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "시사저널"
+    category: "society"
+    url: http://www.sisajournal.com/rss/S1N47.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "에이블뉴스"
+    category: "_all_"
+    url: https://www.ablenews.co.kr/rss/allArticle.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "에이블뉴스"
+    category: "economy"
+    url: https://www.ablenews.co.kr/rss/S1N4.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "여성신문"
+    category: "_all_"
+    url: http://www.womennews.co.kr/rss/allArticle.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "여성신문"
+    category: "economy"
+    url: http://www.womennews.co.kr/rss/S1N4.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "여성신문"
+    category: "society"
+    url: http://www.womennews.co.kr/rss/S1N2.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "일다"
+    category: "_all_"
+    url: https://www.ildaro.com/rss/rss_news.php
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "조선일보"
+    category: "_all_"
+    url: https://www.chosun.com/arc/outboundfeeds/rss/?outputType=xml
+    enabled: true
+    robots: "혼합 허용 2/3"
+  - publisher: "조선일보"
+    category: "economy"
+    url: https://www.chosun.com/arc/outboundfeeds/rss/category/economy/?outputType=xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "조선일보"
+    category: "society"
+    url: https://www.chosun.com/arc/outboundfeeds/rss/category/national/?outputType=xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "천지일보"
+    category: "_all_"
+    url: https://cdn.newscj.com/rss/gns_allArticle.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "천지일보"
+    category: "economy"
+    url: https://cdn.newscj.com/rss/gns_S1N2.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "천지일보"
+    category: "society"
+    url: https://cdn.newscj.com/rss/gns_S1N3.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "통일뉴스"
+    category: "_all_"
+    url: https://www.tongilnews.com/rss/allArticle.xml
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "프레시안"
+    category: "_all_"
+    url: https://www.pressian.com/api/v3/site/rss/news
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "프레시안"
+    category: "economy"
+    url: https://www.pressian.com/api/v3/site/rss/section/67
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "프레시안"
+    category: "society"
+    url: https://www.pressian.com/api/v3/site/rss/section/68
+    enabled: true
+    robots: "허용(200)"
+  - publisher: "한겨레신문"
+    category: "_all_"
+    url: https://www.hani.co.kr/rss/
+    enabled: true
+    # 항목에 날짜 없음 → 수집 시각(first-seen)을 발행 시각 대신 사용
+    robots: "허용(200)"
+  - publisher: "한겨레신문"
+    category: "economy"
+    url: https://www.hani.co.kr/rss/economy/
+    enabled: true
+    # 항목에 날짜 없음 → 수집 시각(first-seen)을 발행 시각 대신 사용
+    robots: "허용(200)"
+  - publisher: "한겨레신문"
+    category: "society"
+    url: https://www.hani.co.kr/rss/society/
+    enabled: true
+    # 항목에 날짜 없음 → 수집 시각(first-seen)을 발행 시각 대신 사용
+    robots: "허용(200)"

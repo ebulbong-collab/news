@@ -1,0 +1,27 @@
+name: check-feeds
+
+# 0단계 피드 검증을 운영 환경(GitHub Actions)에서 수동 실행한다.
+# 샌드박스에서 접속되지 않았던 언론사가 여기서 열리는지 확인하는 용도다.
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install feedparser requests beautifulsoup4 pyyaml
+      - name: Run feed check
+        run: |
+          python scripts/check_feeds.py > /dev/null || echo "통과 기준 미달 (exit $?) — 보고서를 확인한다"
+          cat reports/stage0_feed_check.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stage0-report
+          path: |
+            reports/stage0_feed_check.md
+            data/feed_check_result.json
+            feeds.yaml
