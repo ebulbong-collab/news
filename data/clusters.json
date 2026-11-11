@@ -1,7 +1,7 @@
 {
- "run_at": "2026-11-11T15:06+09:00",
+ "run_at": "2026-11-11T15:31+09:00",
  "model": "claude-haiku-5-5",
- "source": "Claude Code 서브에이전트(haiku 계열)에 prompts/cluster.md 와 같은 지시문·같은 제목 목록을 준 결과. Messages API 호출 경로는 검증되지 않았다",
+ "source": "model",
  "window_hours": 72,
  "min_publishers": 2,
  "stats": {
@@ -11,14 +11,19 @@
   "n_eligible": 1,
   "n_draft_candidates": 1,
   "n_waiting": 16,
-  "n_waiting_policy": 11,
+  "n_waiting_policy": 14,
   "fixes": {
    "out_of_range": 0,
    "duplicate": 0,
    "missing": 0
   }
  },
- "usage": null,
+ "usage": {
+  "model": "claude-haiku-5-5",
+  "request_id": "req_011CgvfwUvznCRF83Pk3Atao",
+  "input_tokens": 2228,
+  "output_tokens": 1726
+ },
  "clusters": [
   {
    "label": "유류세 인하 2개월 연장",
@@ -74,7 +79,7 @@
    "cluster_id": "c01"
   },
   {
-   "label": "민생지원금 소비효과 AI 예측 연구",
+   "label": "AI 민생지원금 소비효과 예측 연구",
    "policy_related": true,
    "publishers": [
     "조선일보"
@@ -95,7 +100,7 @@
    "cluster_id": "c02"
   },
   {
-   "label": "하남시 정신건강 심리상담 바우처 재개",
+   "label": "하남시 심리상담 바우처 재개",
    "policy_related": true,
    "publishers": [
     "프레시안"
@@ -137,7 +142,7 @@
    "cluster_id": "c04"
   },
   {
-   "label": "전북대 총장 후보 공약",
+   "label": "조재영 전북대 총장 후보 공약",
    "policy_related": false,
    "publishers": [
     "프레시안"
@@ -158,7 +163,7 @@
    "cluster_id": "c05"
   },
   {
-   "label": "남해군 기본소득 시행 후 마을 활성화",
+   "label": "남해군 기본소득 시행 효과",
    "policy_related": true,
    "publishers": [
     "여성신문"
@@ -221,7 +226,7 @@
    "cluster_id": "c08"
   },
   {
-   "label": "독일 신원 비공개 출산과 보호출산제 비교",
+   "label": "독일 신원 비공개 출산과 보호출산제",
    "policy_related": false,
    "publishers": [
     "일다"
@@ -242,7 +247,7 @@
    "cluster_id": "c09"
   },
   {
-   "label": "횡성군 반값 여행 신청 접수",
+   "label": "횡성군 반값 여행 지원",
    "policy_related": true,
    "publishers": [
     "경향신문"
@@ -263,7 +268,7 @@
    "cluster_id": "c10"
   },
   {
-   "label": "에너지바우처 예산 미사용과 수급 사각지대",
+   "label": "에너지바우처 예산 미집행 문제",
    "policy_related": true,
    "publishers": [
     "뉴시스"
@@ -305,8 +310,8 @@
    "cluster_id": "c12"
   },
   {
-   "label": "필리핀 법인세 감면법 칼럼",
-   "policy_related": false,
+   "label": "필리핀 법인세 감면법 혜택 칼럼",
+   "policy_related": true,
    "publishers": [
     "경향신문"
    ],
@@ -347,8 +352,8 @@
    "cluster_id": "c14"
   },
   {
-   "label": "비거주 1주택 종부세 공제 확대 논쟁",
-   "policy_related": false,
+   "label": "비거주 1주택 종부세 공제 확대 논의",
+   "policy_related": true,
    "publishers": [
     "딴지일보"
    ],
@@ -389,8 +394,8 @@
    "cluster_id": "c16"
   },
   {
-   "label": "사립대병원 육아휴직급여 미지급 논란",
-   "policy_related": false,
+   "label": "육아휴직급여 월 50만원 적용 문제",
+   "policy_related": true,
    "publishers": [
     "매일노동뉴스"
    ],
