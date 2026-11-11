@@ -3,3 +3,6 @@ data/tmp/
 __pycache__/
 *.pyc
 .env
+
+# 2단계 샘플 초안(승인 전 초안은 저장소에 올리지 않는다)
+reports/stage2_samples/
