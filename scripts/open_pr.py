@@ -249,7 +249,7 @@ def main() -> int:
     branch = f"drafts/{today}"
     if args.allow_dev:
         title = "[개발용 시험·병합 금지] " + title
-        branch = f"drafts/dev-{today}-{datetime.now(KST):%H%M}"
+        branch = "drafts/dev-test"   # 시험 PR 은 한 브랜치를 재사용한다(실행마다 브랜치가 쌓이지 않게)
     body = build_pr_body(drafts, today, run_url, notes, args.allow_dev)
     print(publish(branch, files, title, body, os.environ["GITHUB_REPOSITORY"]))
     return 0
