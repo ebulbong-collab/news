@@ -187,8 +187,12 @@ def run(cmd: list[str], **kw) -> subprocess.CompletedProcess:
 
 
 def gh_api(method: str, endpoint: str, payload: dict | None = None) -> dict | list:
-    r = subprocess.run(["gh", "api", "-X", method, endpoint, "--input", "-"] if payload is not None else ["gh", "api", "-X", method, endpoint],
-                       input=json.dumps(payload) if payload is not None else None, check=True, text=True, capture_output=True)
+    cmd = ["gh", "api", "-X", method, endpoint] + (["--input", "-"] if payload is not None else [])
+    try:
+        r = subprocess.run(cmd, input=json.dumps(payload) if payload is not None else None,
+                           check=True, text=True, capture_output=True)
+    except subprocess.CalledProcessError as e:   # 오류 본문(권한 부족 등)을 그대로 보여 준다
+        raise RuntimeError(f"gh api {method} {endpoint} 실패: {(e.stdout or '').strip()} {(e.stderr or '').strip()}") from None
     return json.loads(r.stdout) if r.stdout.strip() else {}
 
 
