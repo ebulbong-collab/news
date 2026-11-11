@@ -1,19 +1,20 @@
-# 사이트 전역 설정. 사이트명·도메인은 가칭이므로 확정되면 이 파일에서만 바꾼다.
+# 사이트 전역 설정. 사이트명은 가칭, 도메인은 미확정(placeholder)이다. 확정되면 이 파일에서만 바꾼다.
 site:
   name: "지원금소식"            # 가칭
-  domain: "jiwon.trendzins.com"  # 가칭
-  url: "https://jiwon.trendzins.com"
+  domain: "example.invalid"     # 미확정 placeholder. 확정 후 실제 도메인으로 교체
+  url: "https://example.invalid"
 
 http:
-  # 본문 가져오기(1단계 이후)에서 쓰는 운영용 UA. 사이트 주소를 밝힌다(지시서 2-4).
-  user_agent: "SiteBot/0.1 (+https://jiwon.trendzins.com)"
+  # 기사 본문 가져오기용 UA. 사이트 주소를 밝힌다(지시서 2-4). {site_url} 은 site.url 로 채운다.
+  # site.url 이 아직 placeholder(.invalid)이면 연락처 없는 UA 로 대신한다(common.body_user_agent).
+  user_agent: "article-reader/0.1 (+{site_url})"
   # 0단계 피드 검증용 UA. 사이트가 아직 공개 전(가칭)이라 주소를 싣지 않는다.
   user_agent_check: "feed-check/0.1 (RSS validation)"
   # RSS 수집용 UA. 도메인이 확정되기 전까지 주소 없이 쓴다. 확정 후 user_agent 와 같게 맞출지 결정.
   # ('collector' 가 들어간 UA 는 한겨레 서버가 403 으로 막아 'reader' 로 쓴다)
   user_agent_feed: "feed-reader/0.1 (RSS reader)"
   # robots.txt 판정 시 매칭할 봇 토큰(로컬 판정용, 전송되지 않음)
-  bot_token: "SiteBot"
+  bot_token: "article-reader"
   min_interval_sec: 1.0          # 같은 사이트에 1초에 1회 이하
   timeout_sec: 15
 
