@@ -1,17 +1,17 @@
 {
- "run_at": "2026-11-12T01:53+09:00",
+ "run_at": "2026-11-13T02:18+09:00",
  "model": "claude-haiku-5-5",
  "source": "model",
  "window_hours": 72,
  "min_publishers": 2,
  "stats": {
-  "n_candidates": 34,
-  "n_clusters": 25,
-  "n_single_article": 22,
-  "n_eligible": 2,
-  "n_draft_candidates": 1,
-  "n_waiting": 23,
-  "n_waiting_policy": 17,
+  "n_candidates": 51,
+  "n_clusters": 38,
+  "n_single_article": 32,
+  "n_eligible": 4,
+  "n_draft_candidates": 3,
+  "n_waiting": 34,
+  "n_waiting_policy": 21,
   "fixes": {
    "out_of_range": 0,
    "duplicate": 0,
@@ -21,9 +21,9 @@
  "usage": {
   "model": "claude-haiku-5-5",
   "served_model": "claude-haiku-5-5",
-  "request_id": "req_011CgwVJV5jRXkSPBskgJLu8",
-  "input_tokens": 2823,
-  "output_tokens": 2457
+  "request_id": "req_011CgyR5J1AJj617Z1k4z5mj",
+  "input_tokens": 3652,
+  "output_tokens": 3430
  },
  "clusters": [
   {
@@ -94,7 +94,43 @@
    "cluster_id": "c01"
   },
   {
-   "label": "챗GPT 활용 소비쿠폰·지원금 효과 연구",
+   "label": "공공재개발 사업수수료 인하",
+   "policy_related": true,
+   "publishers": [
+    "경향신문",
+    "뉴시스"
+   ],
+   "n_publishers": 2,
+   "eligible": true,
+   "action": "new",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "3bf9d3cbf3",
+     "publisher": "경향신문",
+     "title": "공공재개발 사업수수료 3%→1%로 한시 인하···“구역당 평균 130억 절감”",
+     "link": "https://www.khan.co.kr/article/202611121657001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+     "pub": "2026-11-12T16:57+09:00"
+    },
+    {
+     "id": "bebd91c1e6",
+     "publisher": "경향신문",
+     "title": "공공재개발 사업수수료 3%→1%로 한시 인하···“구역당 평균 130억 절감”",
+     "link": "https://www.khan.co.kr/article/202611121657001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
+     "pub": "2026-11-12T16:57+09:00"
+    },
+    {
+     "id": "b35f2775dd",
+     "publisher": "뉴시스",
+     "title": "공공재개발 수수료 3%→1% 인하…\"평균 130억 절감\"",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865023",
+     "pub": "2026-11-12T11:00+09:00"
+    }
+   ],
+   "cluster_id": "c02"
+  },
+  {
+   "label": "소비쿠폰·지원금 소비 효과 챗GPT 연구",
    "policy_related": false,
    "publishers": [
     "조선일보",
@@ -127,10 +163,67 @@
      "pub": "2026-11-11T14:56+09:00"
     }
    ],
-   "cluster_id": "c02"
+   "cluster_id": "c03"
   },
   {
-   "label": "기후재난 재정 지원 촉구",
+   "label": "등기부 발급·열람 수수료 인상",
+   "policy_related": true,
+   "publishers": [
+    "뉴시스",
+    "조선일보"
+   ],
+   "n_publishers": 2,
+   "eligible": true,
+   "action": "new",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "ce9cd9ed79",
+     "publisher": "뉴시스",
+     "title": "등기부 발급·열람 수수료 400원 인상…공인중개사 업계 반발",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865661",
+     "pub": "2026-11-12T14:44+09:00"
+    },
+    {
+     "id": "7e1f0f3bf8",
+     "publisher": "조선일보",
+     "title": "등기부등본 열람 수수료 700→1100원 인상 “비용 부담, 서민에게 전가”… 5만명이 청원",
+     "link": "https://www.chosun.com/economy/real_estate/2026/11/12/L6NPPFRKCFH53HF4TFFQGSVYOM/",
+     "pub": "2026-11-12T00:32+09:00"
+    }
+   ],
+   "cluster_id": "c04"
+  },
+  {
+   "label": "서울 월세 보조금 상한",
+   "policy_related": true,
+   "publishers": [
+    "경향신문"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "cc292c60cc",
+     "publisher": "경향신문",
+     "title": "실제 물가 못따라가는 월세 보조금···서울 1인 지원 상한, 원룸 월세의 절반",
+     "link": "https://www.khan.co.kr/article/202611121657021/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+     "pub": "2026-11-12T16:57+09:00"
+    },
+    {
+     "id": "e65150dac4",
+     "publisher": "경향신문",
+     "title": "실제 물가 못따라가는 월세 보조금···서울 1인 지원 상한, 원룸 월세의 절반",
+     "link": "https://www.khan.co.kr/article/202611121657021/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
+     "pub": "2026-11-12T16:57+09:00"
+    }
+   ],
+   "cluster_id": "c05"
+  },
+  {
+   "label": "기후재난 선진국 재정 지원 촉구",
    "policy_related": false,
    "publishers": [
     "경향신문"
@@ -155,10 +248,241 @@
      "pub": "2026-11-11T21:41+09:00"
     }
    ],
-   "cluster_id": "c03"
+   "cluster_id": "c06"
   },
   {
-   "label": "한양사이버대 위탁전형 수업료 감면",
+   "label": "대출 성실 상환 청년 지원금·금융 공급",
+   "policy_related": true,
+   "publishers": [
+    "조선일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "dacfdd6f68",
+     "publisher": "조선일보",
+     "title": "대출 성실 상환 청년에 지원금… 서민·소상공인 4.5조원 금융 공급도",
+     "link": "https://www.chosun.com/economy/stock-finance/2026/11/13/MOL2AEKBENEXREKHWFG4UCUHLA/",
+     "pub": "2026-11-13T00:30+09:00"
+    }
+   ],
+   "cluster_id": "c07"
+  },
+  {
+   "label": "한전 3분기 영업이익 급감",
+   "policy_related": false,
+   "publishers": [
+    "한겨레신문"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "86a0e718ee",
+     "publisher": "한겨레신문",
+     "title": "한전, 3분기 영업익 지난해보다 70% 급감…요금 인상 압박 커지나",
+     "link": "https://www.hani.co.kr/arti/society/environment/1287042.html",
+     "pub": null
+    }
+   ],
+   "cluster_id": "c08"
+  },
+  {
+   "label": "공공분야 노란봉투법 행정소송",
+   "policy_related": false,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "6ebdb99e53",
+     "publisher": "뉴시스",
+     "title": "보조금 주는 지자체도 '사용자?'…공공분야 첫 노란봉투법 행정소송 시작",
+     "link": "https://www.newsis.com/view/NISX20261112_0003866011",
+     "pub": "2026-11-12T16:40+09:00"
+    }
+   ],
+   "cluster_id": "c09"
+  },
+  {
+   "label": "약국 면허대여 보조금 편취 혐의 무죄",
+   "policy_related": false,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "8a0e9b3a4c",
+     "publisher": "뉴시스",
+     "title": "'면허대여 약국 보조금 편취' 혐의 원불교재단, 1심 무죄",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865904",
+     "pub": "2026-11-12T16:05+09:00"
+    }
+   ],
+   "cluster_id": "c10"
+  },
+  {
+   "label": "전남·광주 중기 금융지원 헬프데스크",
+   "policy_related": true,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "235c867b3a",
+     "publisher": "뉴시스",
+     "title": "전남·광주 중기 \"금융지원 필요\"…'헬프데스크' 가동",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865275",
+     "pub": "2026-11-12T16:00+09:00"
+    }
+   ],
+   "cluster_id": "c11"
+  },
+  {
+   "label": "공익직불금 지급 시작",
+   "policy_related": true,
+   "publishers": [
+    "경향신문"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "b131891e50",
+     "publisher": "경향신문",
+     "title": "공익직불금 이달부터 지급 시작…17년만에 소득금액 기준 상향으로 지급대상 1만명 늘어",
+     "link": "https://www.khan.co.kr/article/202611121528001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
+     "pub": "2026-11-12T15:28+09:00"
+    }
+   ],
+   "cluster_id": "c12"
+  },
+  {
+   "label": "중노위 하청 임금 교섭 대상 인정",
+   "policy_related": false,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "2f35772e9c",
+     "publisher": "뉴시스",
+     "title": "중노위 \"하청 임금도 교섭 대상\"…노란봉투법 시행 후 첫 인정",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865538",
+     "pub": "2026-11-12T14:04+09:00"
+    }
+   ],
+   "cluster_id": "c13"
+  },
+  {
+   "label": "미군 공여지 지원 법안 발의",
+   "policy_related": true,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "89e5b2c726",
+     "publisher": "뉴시스",
+     "title": "'장기 미반환 미군 공여지 지원 강화' 법안 국회 발의…동두천시 환영",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865188",
+     "pub": "2026-11-12T10:44+09:00"
+    }
+   ],
+   "cluster_id": "c14"
+  },
+  {
+   "label": "하나은행 퇴직연금 ETF 당일매매",
+   "policy_related": false,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "5330e4cfe6",
+     "publisher": "뉴시스",
+     "title": "하나은행, 퇴직연금 ETF 당일매매 시행",
+     "link": "https://www.newsis.com/view/NISX20261112_0003864950",
+     "pub": "2026-11-12T09:35+09:00"
+    }
+   ],
+   "cluster_id": "c15"
+  },
+  {
+   "label": "장애인체육회 신인선수 훈련지원금",
+   "policy_related": true,
+   "publishers": [
+    "에이블뉴스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "6a986d5c62",
+     "publisher": "에이블뉴스",
+     "title": "서울시장애인체육회·㈜석찬, 신인선수 대상 훈련지원금·물품 지원",
+     "link": "https://www.ablenews.co.kr/news/articleView.html?idxno=234586",
+     "pub": "2026-11-12T08:59+09:00"
+    }
+   ],
+   "cluster_id": "c16"
+  },
+  {
+   "label": "화물차·건설기계 통행료 심야할인 연장",
+   "policy_related": true,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "1fc5c24322",
+     "publisher": "뉴시스",
+     "title": "화물차·건설기계 고속국도 통행료 심야할인 2년 연장",
+     "link": "https://www.newsis.com/view/NISX20261111_0003863058",
+     "pub": "2026-11-12T06:00+09:00"
+    }
+   ],
+   "cluster_id": "c17"
+  },
+  {
+   "label": "한양사이버대 군·산업체 위탁 수업료 감면",
    "policy_related": true,
    "publishers": [
     "서울신문"
@@ -176,31 +500,10 @@
      "pub": "2026-11-12T00:55+09:00"
     }
    ],
-   "cluster_id": "c04"
+   "cluster_id": "c18"
   },
   {
-   "label": "등기부등본 열람 수수료 인상",
-   "policy_related": true,
-   "publishers": [
-    "조선일보"
-   ],
-   "n_publishers": 1,
-   "eligible": false,
-   "action": "waiting",
-   "existing_topics": [],
-   "articles": [
-    {
-     "id": "7e1f0f3bf8",
-     "publisher": "조선일보",
-     "title": "등기부등본 열람 수수료 700→1100원 인상 “비용 부담, 서민에게 전가”… 5만명이 청원",
-     "link": "https://www.chosun.com/economy/real_estate/2026/11/12/L6NPPFRKCFH53HF4TFFQGSVYOM/",
-     "pub": "2026-11-12T00:32+09:00"
-    }
-   ],
-   "cluster_id": "c05"
-  },
-  {
-   "label": "충남도의회 교육위 서해안 교육현안 진단",
+   "label": "충남도의회 서해안권 교육현안 진단",
    "policy_related": false,
    "publishers": [
     "천지일보"
@@ -218,10 +521,10 @@
      "pub": "2026-11-11T22:58+09:00"
     }
    ],
-   "cluster_id": "c06"
+   "cluster_id": "c19"
   },
   {
-   "label": "이용철 5.18 보상금 소송",
+   "label": "이용철 5.18 보상금 소송 패소",
    "policy_related": false,
    "publishers": [
     "천지일보"
@@ -239,10 +542,10 @@
      "pub": "2026-11-11T22:34+09:00"
     }
    ],
-   "cluster_id": "c07"
+   "cluster_id": "c20"
   },
   {
-   "label": "우체국 집배원 사학연금 수령자 안부 확인",
+   "label": "집배원 사학연금 수령자 안부 확인",
    "policy_related": true,
    "publishers": [
     "천지일보"
@@ -260,7 +563,7 @@
      "pub": "2026-11-11T22:09+09:00"
     }
    ],
-   "cluster_id": "c08"
+   "cluster_id": "c21"
   },
   {
    "label": "게임 제작비 공제 형평성 논란",
@@ -281,10 +584,10 @@
      "pub": "2026-11-11T21:39+09:00"
     }
    ],
-   "cluster_id": "c09"
+   "cluster_id": "c22"
   },
   {
-   "label": "빼빼로 데이 '빼난지원금' 캠페인",
+   "label": "빼빼로 빼난지원금",
    "policy_related": false,
    "publishers": [
     "뉴시스"
@@ -302,7 +605,7 @@
      "pub": "2026-11-11T19:33+09:00"
     }
    ],
-   "cluster_id": "c10"
+   "cluster_id": "c23"
   },
   {
    "label": "하남시 정신건강 심리상담 바우처 재개",
@@ -323,10 +626,10 @@
      "pub": "2026-11-11T14:49+09:00"
     }
    ],
-   "cluster_id": "c11"
+   "cluster_id": "c24"
   },
   {
-   "label": "건강보험 본인부담금환급금 확인 안내",
+   "label": "건강보험 본인부담금 환급금 확인",
    "policy_related": true,
    "publishers": [
     "뉴시스"
@@ -344,7 +647,7 @@
      "pub": "2026-11-11T14:45+09:00"
     }
    ],
-   "cluster_id": "c12"
+   "cluster_id": "c25"
   },
   {
    "label": "조재영 전북대 총장 후보 공약",
@@ -365,7 +668,7 @@
      "pub": "2026-11-11T14:41+09:00"
     }
    ],
-   "cluster_id": "c13"
+   "cluster_id": "c26"
   },
   {
    "label": "남해군 기본소득 시행 효과",
@@ -386,7 +689,7 @@
      "pub": "2026-11-11T13:52+09:00"
     }
    ],
-   "cluster_id": "c14"
+   "cluster_id": "c27"
   },
   {
    "label": "부안군 어업용 면세유 지원",
@@ -407,7 +710,7 @@
      "pub": "2026-11-11T11:42+09:00"
     }
    ],
-   "cluster_id": "c15"
+   "cluster_id": "c28"
   },
   {
    "label": "희망리턴패키지 폐업 소상공인 지원",
@@ -428,10 +731,10 @@
      "pub": "2026-11-11T10:36+09:00"
     }
    ],
-   "cluster_id": "c16"
+   "cluster_id": "c29"
   },
   {
-   "label": "독일 신원 비공개 출산 제도와 한국 보호출산제",
+   "label": "독일 신원 비공개 출산과 보호출산제",
    "policy_related": false,
    "publishers": [
     "일다"
@@ -449,10 +752,10 @@
      "pub": "2026-11-11T09:42+09:00"
     }
    ],
-   "cluster_id": "c17"
+   "cluster_id": "c30"
   },
   {
-   "label": "횡성군 겨울 반값 여행 신청",
+   "label": "횡성군 반값 여행 지원",
    "policy_related": true,
    "publishers": [
     "경향신문"
@@ -470,10 +773,10 @@
      "pub": "2026-11-11T09:39+09:00"
     }
    ],
-   "cluster_id": "c18"
+   "cluster_id": "c31"
   },
   {
-   "label": "에너지바우처 예산 잔액과 수급 사각지대",
+   "label": "에너지바우처 예산 미집행",
    "policy_related": true,
    "publishers": [
     "뉴시스"
@@ -491,7 +794,7 @@
      "pub": "2026-11-11T07:00+09:00"
     }
    ],
-   "cluster_id": "c19"
+   "cluster_id": "c32"
   },
   {
    "label": "아동기본수당·출산지원금 미래기금 편성",
@@ -512,11 +815,11 @@
      "pub": "2026-11-10T21:07+09:00"
     }
    ],
-   "cluster_id": "c20"
+   "cluster_id": "c33"
   },
   {
-   "label": "필리핀 법인세 감면법 혜택 기업",
-   "policy_related": true,
+   "label": "필리핀 법인세 감면 혜택 칼럼",
+   "policy_related": false,
    "publishers": [
     "경향신문"
    ],
@@ -533,7 +836,7 @@
      "pub": "2026-11-10T20:15+09:00"
     }
    ],
-   "cluster_id": "c21"
+   "cluster_id": "c34"
   },
   {
    "label": "위기가구 생계비 30만원 우선지급",
@@ -554,11 +857,11 @@
      "pub": "2026-11-10T11:23+09:00"
     }
    ],
-   "cluster_id": "c22"
+   "cluster_id": "c35"
   },
   {
-   "label": "비거주 1주택 종부세 공제 확대 요구",
-   "policy_related": true,
+   "label": "민주당 종부세 공제 확대 요구",
+   "policy_related": false,
    "publishers": [
     "딴지일보"
    ],
@@ -575,10 +878,10 @@
      "pub": "2026-11-10T10:05+09:00"
     }
    ],
-   "cluster_id": "c23"
+   "cluster_id": "c36"
   },
   {
-   "label": "상속공제 개편 논란",
+   "label": "상속공제 개편 칼럼",
    "policy_related": true,
    "publishers": [
     "시사저널"
@@ -596,10 +899,10 @@
      "pub": "2026-11-10T09:15+09:00"
     }
    ],
-   "cluster_id": "c24"
+   "cluster_id": "c37"
   },
   {
-   "label": "육아휴직급여 지급 차이 문제",
+   "label": "육아휴직급여 사립대병원 지급 논란",
    "policy_related": true,
    "publishers": [
     "매일노동뉴스"
@@ -617,7 +920,7 @@
      "pub": "2026-11-10T06:30+09:00"
     }
    ],
-   "cluster_id": "c25"
+   "cluster_id": "c38"
   }
  ]
 }

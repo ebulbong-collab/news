@@ -1,5 +1,18 @@
 [
  {
+  "id": "dacfdd6f68",
+  "publisher": "조선일보",
+  "feed": "economy",
+  "title": "대출 성실 상환 청년에 지원금… 서민·소상공인 4.5조원 금융 공급도",
+  "link": "https://www.chosun.com/economy/stock-finance/2026/11/13/MOL2AEKBENEXREKHWFG4UCUHLA/",
+  "pub": "2026-11-13T00:30+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-13T02:18+09:00"
+ },
+ {
   "id": "86a0e718ee",
   "publisher": "한겨레신문",
   "feed": "society",
