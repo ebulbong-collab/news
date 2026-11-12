@@ -1,5 +1,70 @@
 [
  {
+  "id": "b35f2775dd",
+  "publisher": "뉴시스",
+  "feed": "economy",
+  "title": "공공재개발 수수료 3%→1% 인하…\"평균 130억 절감\"",
+  "link": "https://www.newsis.com/view/NISX20261112_0003865023",
+  "pub": "2026-11-12T11:00+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "인하"
+  ],
+  "first_seen": "2026-11-12T11:42+09:00"
+ },
+ {
+  "id": "89e5b2c726",
+  "publisher": "뉴시스",
+  "feed": "society",
+  "title": "'장기 미반환 미군 공여지 지원 강화' 법안 국회 발의…동두천시 환영",
+  "link": "https://www.newsis.com/view/NISX20261112_0003865188",
+  "pub": "2026-11-12T10:44+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "보조금"
+  ],
+  "first_seen": "2026-11-12T11:42+09:00"
+ },
+ {
+  "id": "5330e4cfe6",
+  "publisher": "뉴시스",
+  "feed": "economy",
+  "title": "하나은행, 퇴직연금 ETF 당일매매 시행",
+  "link": "https://www.newsis.com/view/NISX20261112_0003864950",
+  "pub": "2026-11-12T09:35+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "시행"
+  ],
+  "first_seen": "2026-11-12T11:42+09:00"
+ },
+ {
+  "id": "6a986d5c62",
+  "publisher": "에이블뉴스",
+  "feed": "_all_",
+  "title": "서울시장애인체육회·㈜석찬, 신인선수 대상 훈련지원금·물품 지원",
+  "link": "https://www.ablenews.co.kr/news/articleView.html?idxno=234586",
+  "pub": "2026-11-12T08:59+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-12T11:42+09:00"
+ },
+ {
+  "id": "1fc5c24322",
+  "publisher": "뉴시스",
+  "feed": "economy",
+  "title": "화물차·건설기계 고속국도 통행료 심야할인 2년 연장",
+  "link": "https://www.newsis.com/view/NISX20261111_0003863058",
+  "pub": "2026-11-12T06:00+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "감면"
+  ],
+  "first_seen": "2026-11-12T11:42+09:00"
+ },
+ {
   "id": "203b5a2373",
   "publisher": "서울신문",
   "feed": "society",
