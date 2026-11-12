@@ -1,5 +1,149 @@
 [
  {
+  "id": "86a0e718ee",
+  "publisher": "한겨레신문",
+  "feed": "society",
+  "title": "한전, 3분기 영업익 지난해보다 70% 급감…요금 인상 압박 커지나",
+  "link": "https://www.hani.co.kr/arti/society/environment/1287042.html",
+  "pub": null,
+  "reason": "weak_ctx",
+  "hits": [
+   "인상"
+  ],
+  "first_seen": "2026-11-12T19:52+09:00"
+ },
+ {
+  "id": "cc292c60cc",
+  "publisher": "경향신문",
+  "feed": "_all_",
+  "title": "실제 물가 못따라가는 월세 보조금···서울 1인 지원 상한, 원룸 월세의 절반",
+  "link": "https://www.khan.co.kr/article/202611121657021/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+  "pub": "2026-11-12T16:57+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "보조금"
+  ],
+  "first_seen": "2026-11-12T19:52+09:00"
+ },
+ {
+  "id": "3bf9d3cbf3",
+  "publisher": "경향신문",
+  "feed": "_all_",
+  "title": "공공재개발 사업수수료 3%→1%로 한시 인하···“구역당 평균 130억 절감”",
+  "link": "https://www.khan.co.kr/article/202611121657001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+  "pub": "2026-11-12T16:57+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "인하"
+  ],
+  "first_seen": "2026-11-12T19:52+09:00"
+ },
+ {
+  "id": "e65150dac4",
+  "publisher": "경향신문",
+  "feed": "economy",
+  "title": "실제 물가 못따라가는 월세 보조금···서울 1인 지원 상한, 원룸 월세의 절반",
+  "link": "https://www.khan.co.kr/article/202611121657021/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
+  "pub": "2026-11-12T16:57+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "보조금"
+  ],
+  "first_seen": "2026-11-12T19:52+09:00"
+ },
+ {
+  "id": "bebd91c1e6",
+  "publisher": "경향신문",
+  "feed": "economy",
+  "title": "공공재개발 사업수수료 3%→1%로 한시 인하···“구역당 평균 130억 절감”",
+  "link": "https://www.khan.co.kr/article/202611121657001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
+  "pub": "2026-11-12T16:57+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "인하"
+  ],
+  "first_seen": "2026-11-12T19:52+09:00"
+ },
+ {
+  "id": "6ebdb99e53",
+  "publisher": "뉴시스",
+  "feed": "society",
+  "title": "보조금 주는 지자체도 '사용자?'…공공분야 첫 노란봉투법 행정소송 시작",
+  "link": "https://www.newsis.com/view/NISX20261112_0003866011",
+  "pub": "2026-11-12T16:40+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "보조금"
+  ],
+  "first_seen": "2026-11-12T19:52+09:00"
+ },
+ {
+  "id": "8a0e9b3a4c",
+  "publisher": "뉴시스",
+  "feed": "society",
+  "title": "'면허대여 약국 보조금 편취' 혐의 원불교재단, 1심 무죄",
+  "link": "https://www.newsis.com/view/NISX20261112_0003865904",
+  "pub": "2026-11-12T16:05+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "보조금"
+  ],
+  "first_seen": "2026-11-12T19:52+09:00"
+ },
+ {
+  "id": "235c867b3a",
+  "publisher": "뉴시스",
+  "feed": "economy",
+  "title": "전남·광주 중기 \"금융지원 필요\"…'헬프데스크' 가동",
+  "link": "https://www.newsis.com/view/NISX20261112_0003865275",
+  "pub": "2026-11-12T16:00+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "보조금",
+   "장려금"
+  ],
+  "first_seen": "2026-11-12T19:52+09:00"
+ },
+ {
+  "id": "b131891e50",
+  "publisher": "경향신문",
+  "feed": "economy",
+  "title": "공익직불금 이달부터 지급 시작…17년만에 소득금액 기준 상향으로 지급대상 1만명 늘어",
+  "link": "https://www.khan.co.kr/article/202611121528001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
+  "pub": "2026-11-12T15:28+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "지급"
+  ],
+  "first_seen": "2026-11-12T19:52+09:00"
+ },
+ {
+  "id": "ce9cd9ed79",
+  "publisher": "뉴시스",
+  "feed": "economy",
+  "title": "등기부 발급·열람 수수료 400원 인상…공인중개사 업계 반발",
+  "link": "https://www.newsis.com/view/NISX20261112_0003865661",
+  "pub": "2026-11-12T14:44+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "인상"
+  ],
+  "first_seen": "2026-11-12T19:52+09:00"
+ },
+ {
+  "id": "2f35772e9c",
+  "publisher": "뉴시스",
+  "feed": "society",
+  "title": "중노위 \"하청 임금도 교섭 대상\"…노란봉투법 시행 후 첫 인정",
+  "link": "https://www.newsis.com/view/NISX20261112_0003865538",
+  "pub": "2026-11-12T14:04+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "시행"
+  ],
+  "first_seen": "2026-11-12T19:52+09:00"
+ },
+ {
   "id": "b35f2775dd",
   "publisher": "뉴시스",
   "feed": "economy",
