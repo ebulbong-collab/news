@@ -1,17 +1,17 @@
 {
- "run_at": "2026-11-13T02:18+09:00",
+ "run_at": "2026-11-14T01:54+09:00",
  "model": "claude-haiku-5-5",
  "source": "model",
  "window_hours": 72,
  "min_publishers": 2,
  "stats": {
-  "n_candidates": 51,
-  "n_clusters": 38,
-  "n_single_article": 32,
-  "n_eligible": 4,
-  "n_draft_candidates": 3,
-  "n_waiting": 34,
-  "n_waiting_policy": 21,
+  "n_candidates": 67,
+  "n_clusters": 51,
+  "n_single_article": 43,
+  "n_eligible": 5,
+  "n_draft_candidates": 4,
+  "n_waiting": 46,
+  "n_waiting_policy": 27,
   "fixes": {
    "out_of_range": 0,
    "duplicate": 0,
@@ -21,9 +21,9 @@
  "usage": {
   "model": "claude-haiku-5-5",
   "served_model": "claude-haiku-5-5",
-  "request_id": "req_011CgyR5J1AJj617Z1k4z5mj",
-  "input_tokens": 3652,
-  "output_tokens": 3430
+  "request_id": "req_011Ch1H1Ngf1wQhKvvYuyEJB",
+  "input_tokens": 4286,
+  "output_tokens": 4095
  },
  "clusters": [
   {
@@ -94,7 +94,44 @@
    "cluster_id": "c01"
   },
   {
-   "label": "공공재개발 사업수수료 인하",
+   "label": "등기부등본 열람 수수료 인상 추진",
+   "policy_related": true,
+   "publishers": [
+    "뉴시스",
+    "세계일보",
+    "조선일보"
+   ],
+   "n_publishers": 3,
+   "eligible": true,
+   "action": "new",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "b15f9f3c17",
+     "publisher": "세계일보",
+     "title": "등기부등본 발급·열람 수수료 400원 인상 추진에 공인중개사 500명 국회 집결",
+     "link": "https://www.segye.com/newsView/20261113511931",
+     "pub": "2026-11-13T16:28+09:00"
+    },
+    {
+     "id": "ce9cd9ed79",
+     "publisher": "뉴시스",
+     "title": "등기부 발급·열람 수수료 400원 인상…공인중개사 업계 반발",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865661",
+     "pub": "2026-11-12T14:44+09:00"
+    },
+    {
+     "id": "7e1f0f3bf8",
+     "publisher": "조선일보",
+     "title": "등기부등본 열람 수수료 700→1100원 인상 “비용 부담, 서민에게 전가”… 5만명이 청원",
+     "link": "https://www.chosun.com/economy/real_estate/2026/11/12/L6NPPFRKCFH53HF4TFFQGSVYOM/",
+     "pub": "2026-11-12T00:32+09:00"
+    }
+   ],
+   "cluster_id": "c02"
+  },
+  {
+   "label": "공공재개발 사업수수료 한시 인하",
    "policy_related": true,
    "publishers": [
     "경향신문",
@@ -127,10 +164,10 @@
      "pub": "2026-11-12T11:00+09:00"
     }
    ],
-   "cluster_id": "c02"
+   "cluster_id": "c03"
   },
   {
-   "label": "소비쿠폰·지원금 소비 효과 챗GPT 연구",
+   "label": "소비쿠폰·지원금 효과 AI 예측 연구",
    "policy_related": false,
    "publishers": [
     "조선일보",
@@ -163,14 +200,14 @@
      "pub": "2026-11-11T14:56+09:00"
     }
    ],
-   "cluster_id": "c03"
+   "cluster_id": "c04"
   },
   {
-   "label": "등기부 발급·열람 수수료 인상",
+   "label": "월급방위대 TF 구성",
    "policy_related": true,
    "publishers": [
-    "뉴시스",
-    "조선일보"
+    "경향신문",
+    "서울신문"
    ],
    "n_publishers": 2,
    "eligible": true,
@@ -178,24 +215,52 @@
    "existing_topics": [],
    "articles": [
     {
-     "id": "ce9cd9ed79",
-     "publisher": "뉴시스",
-     "title": "등기부 발급·열람 수수료 400원 인상…공인중개사 업계 반발",
-     "link": "https://www.newsis.com/view/NISX20261112_0003865661",
-     "pub": "2026-11-12T14:44+09:00"
+     "id": "694fed1695",
+     "publisher": "경향신문",
+     "title": "정부 ‘월급방위대 TF’ 첫 회의…월세공제·대중교통 환급 확대 점검",
+     "link": "https://www.khan.co.kr/article/202611131436001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
+     "pub": "2026-11-13T14:36+09:00"
     },
     {
-     "id": "7e1f0f3bf8",
-     "publisher": "조선일보",
-     "title": "등기부등본 열람 수수료 700→1100원 인상 “비용 부담, 서민에게 전가”… 5만명이 청원",
-     "link": "https://www.chosun.com/economy/real_estate/2026/11/12/L6NPPFRKCFH53HF4TFFQGSVYOM/",
-     "pub": "2026-11-12T00:32+09:00"
+     "id": "70a2f85066",
+     "publisher": "서울신문",
+     "title": "청와대 이어 정부도 ‘월급방위대 TF’ 구성… 생계비 부담 경감 등 과제 발굴",
+     "link": "https://www.seoul.co.kr/news/newsView.php?id=20261113500036",
+     "pub": "2026-11-13T09:19+09:00"
     }
    ],
-   "cluster_id": "c04"
+   "cluster_id": "c05"
   },
   {
-   "label": "서울 월세 보조금 상한",
+   "label": "제주 교통약자 바우처 택시 안내문 철회",
+   "policy_related": false,
+   "publishers": [
+    "경향신문"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "1392fcb7f1",
+     "publisher": "경향신문",
+     "title": "“예산 소진에 교통약자 바우처 택시 가능하면 이용 자제?”···제주센터, 안내문 철회·공식 사과",
+     "link": "https://www.khan.co.kr/article/202611131043001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+     "pub": "2026-11-13T10:43+09:00"
+    },
+    {
+     "id": "e1e140fcf6",
+     "publisher": "경향신문",
+     "title": "“예산 소진에 교통약자 바우처 택시 가능하면 이용 자제?”···제주센터, 안내문 철회·공식 사과",
+     "link": "https://www.khan.co.kr/article/202611131043001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=society_news",
+     "pub": "2026-11-13T10:43+09:00"
+    }
+   ],
+   "cluster_id": "c06"
+  },
+  {
+   "label": "서울 월세 보조금 지원 상한",
    "policy_related": true,
    "publishers": [
     "경향신문"
@@ -220,7 +285,7 @@
      "pub": "2026-11-12T16:57+09:00"
     }
    ],
-   "cluster_id": "c05"
+   "cluster_id": "c07"
   },
   {
    "label": "기후재난 선진국 재정 지원 촉구",
@@ -248,10 +313,367 @@
      "pub": "2026-11-11T21:41+09:00"
     }
    ],
-   "cluster_id": "c06"
+   "cluster_id": "c08"
   },
   {
-   "label": "대출 성실 상환 청년 지원금·금융 공급",
+   "label": "육아휴직 급여 사각지대",
+   "policy_related": true,
+   "publishers": [
+    "천지일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "21ed620a90",
+     "publisher": "천지일보",
+     "title": "[현장] 육아휴직 확대에도 사각지대 여전… “급여 지급 요건 개선해야”",
+     "link": "https://www.newscj.com/news/articleView.html?idxno=3448582",
+     "pub": "2026-11-13T20:03+09:00"
+    }
+   ],
+   "cluster_id": "c09"
+  },
+  {
+   "label": "기후 지원금 상환 문제",
+   "policy_related": true,
+   "publishers": [
+    "한겨레신문"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "99210705c8",
+     "publisher": "한겨레신문",
+     "title": "기후 지원금의 역설…원금보다 30% 더 상환",
+     "link": "https://www.hani.co.kr/arti/science/science_general/1287265.html",
+     "pub": null
+    }
+   ],
+   "cluster_id": "c10"
+  },
+  {
+   "label": "대구 참전유공자 명예수당 인상",
+   "policy_related": true,
+   "publishers": [
+    "조선일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "2af2f4431d",
+     "publisher": "조선일보",
+     "title": "대구시 참전유공자 명예수당 내년부터 월 23만원으로 인상",
+     "link": "https://www.chosun.com/national/regional/2026/11/13/MST3MCZWQRF2VKMKPHGPAUT6KY/",
+     "pub": "2026-11-13T17:10+09:00"
+    }
+   ],
+   "cluster_id": "c11"
+  },
+  {
+   "label": "배추·무 가격 하락과 수출 지원",
+   "policy_related": false,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "85b5741c85",
+     "publisher": "뉴시스",
+     "title": "배추·무 풍작에 가격 하락…정부, 수출 지원 확대",
+     "link": "https://www.newsis.com/view/NISX20261113_0003866473",
+     "pub": "2026-11-13T16:30+09:00"
+    }
+   ],
+   "cluster_id": "c12"
+  },
+  {
+   "label": "지분투자형 재정 지원 확대 계획",
+   "policy_related": true,
+   "publishers": [
+    "조선일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "59ed0a97f6",
+     "publisher": "조선일보",
+     "title": "기획예산처 “내년부터 지분투자형 재정 지원 확대할 것”",
+     "link": "https://www.chosun.com/economy/economy_general/2026/11/13/HE2GIMTBGI3GEY3EGY3DCMBYME/",
+     "pub": "2026-11-13T15:30+09:00"
+    }
+   ],
+   "cluster_id": "c13"
+  },
+  {
+   "label": "한화생명 배타적사용권 획득",
+   "policy_related": false,
+   "publishers": [
+    "천지일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "da20ce705b",
+     "publisher": "천지일보",
+     "title": "한화생명, 장애인 보조기기 지원 특약 배타적사용권 6개월 획득",
+     "link": "https://www.newscj.com/news/articleView.html?idxno=3448508",
+     "pub": "2026-11-13T15:19+09:00"
+    }
+   ],
+   "cluster_id": "c14"
+  },
+  {
+   "label": "NH농협생명·서울시 농촌 일손·노숙인 지원",
+   "policy_related": false,
+   "publishers": [
+    "천지일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "2810a6707c",
+     "publisher": "천지일보",
+     "title": "NH농협생명·서울시, 농촌 일손 돕고 노숙인 자립 지원… ‘같이 일해, 가치 더해’ 첫 운영",
+     "link": "https://www.newscj.com/news/articleView.html?idxno=3448507",
+     "pub": "2026-11-13T15:16+09:00"
+    }
+   ],
+   "cluster_id": "c15"
+  },
+  {
+   "label": "조선업 청년 이탈 문제",
+   "policy_related": false,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "1651d84993",
+     "publisher": "뉴시스",
+     "title": "'조선업 호황'에도 떠나는 청년들…\"위험한 일인데 보상 부족\"",
+     "link": "https://www.newsis.com/view/NISX20261113_0003867148",
+     "pub": "2026-11-13T14:00+09:00"
+    }
+   ],
+   "cluster_id": "c16"
+  },
+  {
+   "label": "호반그룹 김장 나누기 봉사",
+   "policy_related": false,
+   "publishers": [
+    "서울신문"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "6f66a16136",
+     "publisher": "서울신문",
+     "title": "호반그룹 ‘사랑의 김장 나누기’ 봉사…지역사회 따뜻한 겨울나기 지원",
+     "link": "https://www.seoul.co.kr/news/newsView.php?id=20261113500172",
+     "pub": "2026-11-13T13:51+09:00"
+    }
+   ],
+   "cluster_id": "c17"
+  },
+  {
+   "label": "론스타 세금 반환 소송",
+   "policy_related": false,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "66e61d838d",
+     "publisher": "뉴시스",
+     "title": "론스타, 1682억 세금 반환 파기환송심 패소에 재상고…다시 대법으로",
+     "link": "https://www.newsis.com/view/NISX20261113_0003867125",
+     "pub": "2026-11-13T13:49+09:00"
+    }
+   ],
+   "cluster_id": "c18"
+  },
+  {
+   "label": "전기차 국내생산세액공제 도입 논의",
+   "policy_related": true,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "97e6c0741d",
+     "publisher": "뉴시스",
+     "title": "전기차 수입차 점유율 51%…국내생산세액공제 도입 목소리↑",
+     "link": "https://www.newsis.com/view/NISX20261103_0003852535",
+     "pub": "2026-11-13T12:45+09:00"
+    }
+   ],
+   "cluster_id": "c19"
+  },
+  {
+   "label": "파주시 대남방송 소음 피해지원금",
+   "policy_related": true,
+   "publishers": [
+    "한겨레신문"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "ad02adeff4",
+     "publisher": "한겨레신문",
+     "title": "파주시, 북한 대남방송 소음 피해지원금 추가 접수…미신청자 대상",
+     "link": "https://www.hani.co.kr/arti/area/capital/1287170.html",
+     "pub": null
+    }
+   ],
+   "cluster_id": "c20"
+  },
+  {
+   "label": "평창군 반값농자재 조기 지원",
+   "policy_related": true,
+   "publishers": [
+    "서울신문"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "d6e9aa385a",
+     "publisher": "서울신문",
+     "title": "평창군, 반값농자재 지원 조기 시행…“전년보다 두달 앞당겨”",
+     "link": "https://www.seoul.co.kr/news/newsView.php?id=20261113500080",
+     "pub": "2026-11-13T10:22+09:00"
+    }
+   ],
+   "cluster_id": "c21"
+  },
+  {
+   "label": "HD현대오일뱅크 화물차 자녀 장학금",
+   "policy_related": true,
+   "publishers": [
+    "천지일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "89281d9885",
+     "publisher": "천지일보",
+     "title": "HD현대오일뱅크, 화물차 운전자 자녀 65명에 장학금 1억 3000만원 지원",
+     "link": "https://www.newscj.com/news/articleView.html?idxno=3448407",
+     "pub": "2026-11-13T10:18+09:00"
+    }
+   ],
+   "cluster_id": "c22"
+  },
+  {
+   "label": "오산시 청년 학업 지원",
+   "policy_related": true,
+   "publishers": [
+    "천지일보"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "78cd223b78",
+     "publisher": "천지일보",
+     "title": "오산시 청년 학업 지원… 주거비부터 문화생활까지",
+     "link": "https://www.newscj.com/news/articleView.html?idxno=3448403",
+     "pub": "2026-11-13T10:17+09:00"
+    }
+   ],
+   "cluster_id": "c23"
+  },
+  {
+   "label": "신라스케이 방한 관광객 혜택",
+   "policy_related": false,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "7389e43726",
+     "publisher": "뉴시스",
+     "title": "신라스케이, 방한 관광객 취향 저격 맞춤 혜택 다 모았다",
+     "link": "https://www.newsis.com/view/NISX20261113_0003866596",
+     "pub": "2026-11-13T09:44+09:00"
+    }
+   ],
+   "cluster_id": "c24"
+  },
+  {
+   "label": "권고사직과 실업급여 거절 문제",
+   "policy_related": true,
+   "publishers": [
+    "뉴시스"
+   ],
+   "n_publishers": 1,
+   "eligible": false,
+   "action": "waiting",
+   "existing_topics": [],
+   "articles": [
+    {
+     "id": "0c2b8bd898",
+     "publisher": "뉴시스",
+     "title": "\"실업급여 받게 권고사직 처리해 주세요\"…회사가 거절하는 진짜 이유",
+     "link": "https://www.newsis.com/view/NISX20261112_0003865037",
+     "pub": "2026-11-13T04:00+09:00"
+    }
+   ],
+   "cluster_id": "c25"
+  },
+  {
+   "label": "청년 대출 성실상환 지원금과 금융 공급",
    "policy_related": true,
    "publishers": [
     "조선일보"
@@ -269,7 +691,7 @@
      "pub": "2026-11-13T00:30+09:00"
     }
    ],
-   "cluster_id": "c07"
+   "cluster_id": "c26"
   },
   {
    "label": "한전 3분기 영업이익 급감",
@@ -290,10 +712,10 @@
      "pub": null
     }
    ],
-   "cluster_id": "c08"
+   "cluster_id": "c27"
   },
   {
-   "label": "공공분야 노란봉투법 행정소송",
+   "label": "노란봉투법 지자체 행정소송",
    "policy_related": false,
    "publishers": [
     "뉴시스"
@@ -311,10 +733,10 @@
      "pub": "2026-11-12T16:40+09:00"
     }
    ],
-   "cluster_id": "c09"
+   "cluster_id": "c28"
   },
   {
-   "label": "약국 면허대여 보조금 편취 혐의 무죄",
+   "label": "원불교재단 약국 보조금 편취 무죄",
    "policy_related": false,
    "publishers": [
     "뉴시스"
@@ -332,7 +754,7 @@
      "pub": "2026-11-12T16:05+09:00"
     }
    ],
-   "cluster_id": "c10"
+   "cluster_id": "c29"
   },
   {
    "label": "전남·광주 중기 금융지원 헬프데스크",
@@ -353,7 +775,7 @@
      "pub": "2026-11-12T16:00+09:00"
     }
    ],
-   "cluster_id": "c11"
+   "cluster_id": "c30"
   },
   {
    "label": "공익직불금 지급 시작",
@@ -374,10 +796,10 @@
      "pub": "2026-11-12T15:28+09:00"
     }
    ],
-   "cluster_id": "c12"
+   "cluster_id": "c31"
   },
   {
-   "label": "중노위 하청 임금 교섭 대상 인정",
+   "label": "노란봉투법 하청 교섭 판정",
    "policy_related": false,
    "publishers": [
     "뉴시스"
@@ -395,10 +817,10 @@
      "pub": "2026-11-12T14:04+09:00"
     }
    ],
-   "cluster_id": "c13"
+   "cluster_id": "c32"
   },
   {
-   "label": "미군 공여지 지원 법안 발의",
+   "label": "미군 공여지 지원 강화 법안 발의",
    "policy_related": true,
    "publishers": [
     "뉴시스"
@@ -416,7 +838,7 @@
      "pub": "2026-11-12T10:44+09:00"
     }
    ],
-   "cluster_id": "c14"
+   "cluster_id": "c33"
   },
   {
    "label": "하나은행 퇴직연금 ETF 당일매매",
@@ -437,7 +859,7 @@
      "pub": "2026-11-12T09:35+09:00"
     }
    ],
-   "cluster_id": "c15"
+   "cluster_id": "c34"
   },
   {
    "label": "장애인체육회 신인선수 훈련지원금",
@@ -458,10 +880,10 @@
      "pub": "2026-11-12T08:59+09:00"
     }
    ],
-   "cluster_id": "c16"
+   "cluster_id": "c35"
   },
   {
-   "label": "화물차·건설기계 통행료 심야할인 연장",
+   "label": "화물차 고속도로 심야할인 연장",
    "policy_related": true,
    "publishers": [
     "뉴시스"
@@ -479,10 +901,10 @@
      "pub": "2026-11-12T06:00+09:00"
     }
    ],
-   "cluster_id": "c17"
+   "cluster_id": "c36"
   },
   {
-   "label": "한양사이버대 군·산업체 위탁 수업료 감면",
+   "label": "한양사이버대 위탁전형 수업료 감면",
    "policy_related": true,
    "publishers": [
     "서울신문"
@@ -500,10 +922,10 @@
      "pub": "2026-11-12T00:55+09:00"
     }
    ],
-   "cluster_id": "c18"
+   "cluster_id": "c37"
   },
   {
-   "label": "충남도의회 서해안권 교육현안 진단",
+   "label": "충남도의회 서해안 교육현안 진단",
    "policy_related": false,
    "publishers": [
     "천지일보"
@@ -521,10 +943,10 @@
      "pub": "2026-11-11T22:58+09:00"
     }
    ],
-   "cluster_id": "c19"
+   "cluster_id": "c38"
   },
   {
-   "label": "이용철 5.18 보상금 소송 패소",
+   "label": "이용철 5.18 보상금 소송",
    "policy_related": false,
    "publishers": [
     "천지일보"
@@ -542,10 +964,10 @@
      "pub": "2026-11-11T22:34+09:00"
     }
    ],
-   "cluster_id": "c20"
+   "cluster_id": "c39"
   },
   {
-   "label": "집배원 사학연금 수령자 안부 확인",
+   "label": "우체국 집배원 사학연금 수령자 안부 확인",
    "policy_related": true,
    "publishers": [
     "천지일보"
@@ -563,10 +985,10 @@
      "pub": "2026-11-11T22:09+09:00"
     }
    ],
-   "cluster_id": "c21"
+   "cluster_id": "c40"
   },
   {
-   "label": "게임 제작비 공제 형평성 논란",
+   "label": "게임 제작비 공제 형평성",
    "policy_related": true,
    "publishers": [
     "천지일보"
@@ -584,10 +1006,10 @@
      "pub": "2026-11-11T21:39+09:00"
     }
    ],
-   "cluster_id": "c22"
+   "cluster_id": "c41"
   },
   {
-   "label": "빼빼로 빼난지원금",
+   "label": "빼난지원금 초등생 캠페인",
    "policy_related": false,
    "publishers": [
     "뉴시스"
@@ -605,7 +1027,7 @@
      "pub": "2026-11-11T19:33+09:00"
     }
    ],
-   "cluster_id": "c23"
+   "cluster_id": "c42"
   },
   {
    "label": "하남시 정신건강 심리상담 바우처 재개",
@@ -626,7 +1048,7 @@
      "pub": "2026-11-11T14:49+09:00"
     }
    ],
-   "cluster_id": "c24"
+   "cluster_id": "c43"
   },
   {
    "label": "건강보험 본인부담금 환급금 확인",
@@ -647,7 +1069,7 @@
      "pub": "2026-11-11T14:45+09:00"
     }
    ],
-   "cluster_id": "c25"
+   "cluster_id": "c44"
   },
   {
    "label": "조재영 전북대 총장 후보 공약",
@@ -668,7 +1090,7 @@
      "pub": "2026-11-11T14:41+09:00"
     }
    ],
-   "cluster_id": "c26"
+   "cluster_id": "c45"
   },
   {
    "label": "남해군 기본소득 시행 효과",
@@ -689,7 +1111,7 @@
      "pub": "2026-11-11T13:52+09:00"
     }
    ],
-   "cluster_id": "c27"
+   "cluster_id": "c46"
   },
   {
    "label": "부안군 어업용 면세유 지원",
@@ -710,7 +1132,7 @@
      "pub": "2026-11-11T11:42+09:00"
     }
    ],
-   "cluster_id": "c28"
+   "cluster_id": "c47"
   },
   {
    "label": "희망리턴패키지 폐업 소상공인 지원",
@@ -731,10 +1153,10 @@
      "pub": "2026-11-11T10:36+09:00"
     }
    ],
-   "cluster_id": "c29"
+   "cluster_id": "c48"
   },
   {
-   "label": "독일 신원 비공개 출산과 보호출산제",
+   "label": "독일 신원 비공개 출산 제도",
    "policy_related": false,
    "publishers": [
     "일다"
@@ -752,10 +1174,10 @@
      "pub": "2026-11-11T09:42+09:00"
     }
    ],
-   "cluster_id": "c30"
+   "cluster_id": "c49"
   },
   {
-   "label": "횡성군 반값 여행 지원",
+   "label": "횡성군 반값 여행 신청 접수",
    "policy_related": true,
    "publishers": [
     "경향신문"
@@ -773,10 +1195,10 @@
      "pub": "2026-11-11T09:39+09:00"
     }
    ],
-   "cluster_id": "c31"
+   "cluster_id": "c50"
   },
   {
-   "label": "에너지바우처 예산 미집행",
+   "label": "에너지바우처 예산 미사용과 수급 사각지대",
    "policy_related": true,
    "publishers": [
     "뉴시스"
@@ -794,133 +1216,7 @@
      "pub": "2026-11-11T07:00+09:00"
     }
    ],
-   "cluster_id": "c32"
-  },
-  {
-   "label": "아동기본수당·출산지원금 미래기금 편성",
-   "policy_related": true,
-   "publishers": [
-    "경향신문"
-   ],
-   "n_publishers": 1,
-   "eligible": false,
-   "action": "waiting",
-   "existing_topics": [],
-   "articles": [
-    {
-     "id": "bb555bc461",
-     "publisher": "경향신문",
-     "title": "아동기본수당·출산지원금도 ‘미래기금’으로 편성…재원 안정성 ‘물음표’",
-     "link": "https://www.khan.co.kr/article/202611102107015/?utm_source=khan_rss&utm_medium=rss&utm_campaign=society_news",
-     "pub": "2026-11-10T21:07+09:00"
-    }
-   ],
-   "cluster_id": "c33"
-  },
-  {
-   "label": "필리핀 법인세 감면 혜택 칼럼",
-   "policy_related": false,
-   "publishers": [
-    "경향신문"
-   ],
-   "n_publishers": 1,
-   "eligible": false,
-   "action": "waiting",
-   "existing_topics": [],
-   "articles": [
-    {
-     "id": "2d3c485c09",
-     "publisher": "경향신문",
-     "title": "[박병률의 더-이코노미스트]“필리핀 ‘법인세 감면’법 혜택받은 첫 해외기업은 삼성전기 현지 법인”",
-     "link": "https://www.khan.co.kr/article/202611102015005/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
-     "pub": "2026-11-10T20:15+09:00"
-    }
-   ],
-   "cluster_id": "c34"
-  },
-  {
-   "label": "위기가구 생계비 30만원 우선지급",
-   "policy_related": true,
-   "publishers": [
-    "조선일보"
-   ],
-   "n_publishers": 1,
-   "eligible": false,
-   "action": "waiting",
-   "existing_topics": [],
-   "articles": [
-    {
-     "id": "956f37b719",
-     "publisher": "조선일보",
-     "title": "내년부터 위기가구에 생계비 30만원 우선지급, 낙상노인 치료비도 지원",
-     "link": "https://www.chosun.com/national/welfare-medical/2026/11/10/LDQ5NWYN4RDFNA5B2KB5C3HEVY/",
-     "pub": "2026-11-10T11:23+09:00"
-    }
-   ],
-   "cluster_id": "c35"
-  },
-  {
-   "label": "민주당 종부세 공제 확대 요구",
-   "policy_related": false,
-   "publishers": [
-    "딴지일보"
-   ],
-   "n_publishers": 1,
-   "eligible": false,
-   "action": "waiting",
-   "existing_topics": [],
-   "articles": [
-    {
-     "id": "786271f484",
-     "publisher": "딴지일보",
-     "title": "[뉴공 아카이브]복덕위원회: 민주당, 비거주 1주택 종부세 공제 ‘14억 원’ 요구… 시장에 미칠 영향은? 종부세 올리면 전세 매물 줄어든다? 시장 데이터 팩트체크. 강남·서초 아파트값 13주째 하락… 공제 확대가 흐름 바꿀까? 서울 부동산 민심에 여당 의원들 ‘세 부담 완화’ 요구… 해법 될까?",
-     "link": "https://www.ddanzi.com/898578692",
-     "pub": "2026-11-10T10:05+09:00"
-    }
-   ],
-   "cluster_id": "c36"
-  },
-  {
-   "label": "상속공제 개편 칼럼",
-   "policy_related": true,
-   "publishers": [
-    "시사저널"
-   ],
-   "n_publishers": 1,
-   "eligible": false,
-   "action": "waiting",
-   "existing_topics": [],
-   "articles": [
-    {
-     "id": "1e21c5532f",
-     "publisher": "시사저널",
-     "title": "가업 지키라면서 혁신은 막나…상속공제 개편의 역설[라정주의 경제터치]",
-     "link": "https://www.sisajournal.com/news/articleView.html?idxno=393404",
-     "pub": "2026-11-10T09:15+09:00"
-    }
-   ],
-   "cluster_id": "c37"
-  },
-  {
-   "label": "육아휴직급여 사립대병원 지급 논란",
-   "policy_related": true,
-   "publishers": [
-    "매일노동뉴스"
-   ],
-   "n_publishers": 1,
-   "eligible": false,
-   "action": "waiting",
-   "existing_topics": [],
-   "articles": [
-    {
-     "id": "ef60574664",
-     "publisher": "매일노동뉴스",
-     "title": "육아휴직급여 월 50만원 ‘제멋대로’ 사립대병원",
-     "link": "https://www.labortoday.co.kr/news/articleView.html?idxno=237634",
-     "pub": "2026-11-10T06:30+09:00"
-    }
-   ],
-   "cluster_id": "c38"
+   "cluster_id": "c51"
   }
  ]
 }
