@@ -1,5 +1,123 @@
 [
  {
+  "id": "ad02adeff4",
+  "publisher": "한겨레신문",
+  "feed": "_all_",
+  "title": "파주시, 북한 대남방송 소음 피해지원금 추가 접수…미신청자 대상",
+  "link": "https://www.hani.co.kr/arti/area/capital/1287170.html",
+  "pub": null,
+  "reason": "strong_title",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-13T11:25+09:00"
+ },
+ {
+  "id": "1392fcb7f1",
+  "publisher": "경향신문",
+  "feed": "_all_",
+  "title": "“예산 소진에 교통약자 바우처 택시 가능하면 이용 자제?”···제주센터, 안내문 철회·공식 사과",
+  "link": "https://www.khan.co.kr/article/202611131043001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=total_news",
+  "pub": "2026-11-13T10:43+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "바우처"
+  ],
+  "first_seen": "2026-11-13T11:25+09:00"
+ },
+ {
+  "id": "e1e140fcf6",
+  "publisher": "경향신문",
+  "feed": "society",
+  "title": "“예산 소진에 교통약자 바우처 택시 가능하면 이용 자제?”···제주센터, 안내문 철회·공식 사과",
+  "link": "https://www.khan.co.kr/article/202611131043001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=society_news",
+  "pub": "2026-11-13T10:43+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "바우처"
+  ],
+  "first_seen": "2026-11-13T11:25+09:00"
+ },
+ {
+  "id": "d6e9aa385a",
+  "publisher": "서울신문",
+  "feed": "society",
+  "title": "평창군, 반값농자재 지원 조기 시행…“전년보다 두달 앞당겨”",
+  "link": "https://www.seoul.co.kr/news/newsView.php?id=20261113500080",
+  "pub": "2026-11-13T10:22+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "시행"
+  ],
+  "first_seen": "2026-11-13T11:25+09:00"
+ },
+ {
+  "id": "89281d9885",
+  "publisher": "천지일보",
+  "feed": "_all_",
+  "title": "HD현대오일뱅크, 화물차 운전자 자녀 65명에 장학금 1억 3000만원 지원",
+  "link": "https://www.newscj.com/news/articleView.html?idxno=3448407",
+  "pub": "2026-11-13T10:18+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-13T11:25+09:00"
+ },
+ {
+  "id": "78cd223b78",
+  "publisher": "천지일보",
+  "feed": "_all_",
+  "title": "오산시 청년 학업 지원… 주거비부터 문화생활까지",
+  "link": "https://www.newscj.com/news/articleView.html?idxno=3448403",
+  "pub": "2026-11-13T10:17+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-13T11:25+09:00"
+ },
+ {
+  "id": "7389e43726",
+  "publisher": "뉴시스",
+  "feed": "economy",
+  "title": "신라스케이, 방한 관광객 취향 저격 맞춤 혜택 다 모았다",
+  "link": "https://www.newsis.com/view/NISX20261113_0003866596",
+  "pub": "2026-11-13T09:44+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "바우처"
+  ],
+  "first_seen": "2026-11-13T11:25+09:00"
+ },
+ {
+  "id": "70a2f85066",
+  "publisher": "서울신문",
+  "feed": "economy",
+  "title": "청와대 이어 정부도 ‘월급방위대 TF’ 구성… 생계비 부담 경감 등 과제 발굴",
+  "link": "https://www.seoul.co.kr/news/newsView.php?id=20261113500036",
+  "pub": "2026-11-13T09:19+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "환급"
+  ],
+  "first_seen": "2026-11-13T11:25+09:00"
+ },
+ {
+  "id": "0c2b8bd898",
+  "publisher": "뉴시스",
+  "feed": "society",
+  "title": "\"실업급여 받게 권고사직 처리해 주세요\"…회사가 거절하는 진짜 이유",
+  "link": "https://www.newsis.com/view/NISX20261112_0003865037",
+  "pub": "2026-11-13T04:00+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "지원금",
+   "장려금"
+  ],
+  "first_seen": "2026-11-13T11:25+09:00"
+ },
+ {
   "id": "dacfdd6f68",
   "publisher": "조선일보",
   "feed": "economy",
