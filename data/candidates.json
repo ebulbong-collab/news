@@ -1,5 +1,161 @@
 [
  {
+  "id": "99210705c8",
+  "publisher": "한겨레신문",
+  "feed": "_all_",
+  "title": "기후 지원금의 역설…원금보다 30% 더 상환",
+  "link": "https://www.hani.co.kr/arti/science/science_general/1287265.html",
+  "pub": null,
+  "reason": "strong_title",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-13T19:49+09:00"
+ },
+ {
+  "id": "2af2f4431d",
+  "publisher": "조선일보",
+  "feed": "society",
+  "title": "대구시 참전유공자 명예수당 내년부터 월 23만원으로 인상",
+  "link": "https://www.chosun.com/national/regional/2026/11/13/MST3MCZWQRF2VKMKPHGPAUT6KY/",
+  "pub": "2026-11-13T17:10+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "수당"
+  ],
+  "first_seen": "2026-11-13T19:49+09:00"
+ },
+ {
+  "id": "85b5741c85",
+  "publisher": "뉴시스",
+  "feed": "economy",
+  "title": "배추·무 풍작에 가격 하락…정부, 수출 지원 확대",
+  "link": "https://www.newsis.com/view/NISX20261113_0003866473",
+  "pub": "2026-11-13T16:30+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "바우처"
+  ],
+  "first_seen": "2026-11-13T19:49+09:00"
+ },
+ {
+  "id": "b15f9f3c17",
+  "publisher": "세계일보",
+  "feed": "economy",
+  "title": "등기부등본 발급·열람 수수료 400원 인상 추진에 공인중개사 500명 국회 집결",
+  "link": "https://www.segye.com/newsView/20261113511931",
+  "pub": "2026-11-13T16:28+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "인상"
+  ],
+  "first_seen": "2026-11-13T19:49+09:00"
+ },
+ {
+  "id": "59ed0a97f6",
+  "publisher": "조선일보",
+  "feed": "economy",
+  "title": "기획예산처 “내년부터 지분투자형 재정 지원 확대할 것”",
+  "link": "https://www.chosun.com/economy/economy_general/2026/11/13/HE2GIMTBGI3GEY3EGY3DCMBYME/",
+  "pub": "2026-11-13T15:30+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "보조금"
+  ],
+  "first_seen": "2026-11-13T19:49+09:00"
+ },
+ {
+  "id": "da20ce705b",
+  "publisher": "천지일보",
+  "feed": "_all_",
+  "title": "한화생명, 장애인 보조기기 지원 특약 배타적사용권 6개월 획득",
+  "link": "https://www.newscj.com/news/articleView.html?idxno=3448508",
+  "pub": "2026-11-13T15:19+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-13T19:49+09:00"
+ },
+ {
+  "id": "2810a6707c",
+  "publisher": "천지일보",
+  "feed": "_all_",
+  "title": "NH농협생명·서울시, 농촌 일손 돕고 노숙인 자립 지원… ‘같이 일해, 가치 더해’ 첫 운영",
+  "link": "https://www.newscj.com/news/articleView.html?idxno=3448507",
+  "pub": "2026-11-13T15:16+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "장려금"
+  ],
+  "first_seen": "2026-11-13T19:49+09:00"
+ },
+ {
+  "id": "694fed1695",
+  "publisher": "경향신문",
+  "feed": "economy",
+  "title": "정부 ‘월급방위대 TF’ 첫 회의…월세공제·대중교통 환급 확대 점검",
+  "link": "https://www.khan.co.kr/article/202611131436001/?utm_source=khan_rss&utm_medium=rss&utm_campaign=economy_news",
+  "pub": "2026-11-13T14:36+09:00",
+  "reason": "strong_title",
+  "hits": [
+   "환급"
+  ],
+  "first_seen": "2026-11-13T19:49+09:00"
+ },
+ {
+  "id": "1651d84993",
+  "publisher": "뉴시스",
+  "feed": "economy",
+  "title": "'조선업 호황'에도 떠나는 청년들…\"위험한 일인데 보상 부족\"",
+  "link": "https://www.newsis.com/view/NISX20261113_0003867148",
+  "pub": "2026-11-13T14:00+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "수당"
+  ],
+  "first_seen": "2026-11-13T19:49+09:00"
+ },
+ {
+  "id": "6f66a16136",
+  "publisher": "서울신문",
+  "feed": "economy",
+  "title": "호반그룹 ‘사랑의 김장 나누기’ 봉사…지역사회 따뜻한 겨울나기 지원",
+  "link": "https://www.seoul.co.kr/news/newsView.php?id=20261113500172",
+  "pub": "2026-11-13T13:51+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "지원금"
+  ],
+  "first_seen": "2026-11-13T19:49+09:00"
+ },
+ {
+  "id": "66e61d838d",
+  "publisher": "뉴시스",
+  "feed": "society",
+  "title": "론스타, 1682억 세금 반환 파기환송심 패소에 재상고…다시 대법으로",
+  "link": "https://www.newsis.com/view/NISX20261113_0003867125",
+  "pub": "2026-11-13T13:49+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "환급"
+  ],
+  "first_seen": "2026-11-13T19:49+09:00"
+ },
+ {
+  "id": "97e6c0741d",
+  "publisher": "뉴시스",
+  "feed": "economy",
+  "title": "전기차 수입차 점유율 51%…국내생산세액공제 도입 목소리↑",
+  "link": "https://www.newsis.com/view/NISX20261103_0003852535",
+  "pub": "2026-11-13T12:45+09:00",
+  "reason": "desc_strong",
+  "hits": [
+   "보조금"
+  ],
+  "first_seen": "2026-11-13T19:49+09:00"
+ },
+ {
   "id": "ad02adeff4",
   "publisher": "한겨레신문",
   "feed": "_all_",
