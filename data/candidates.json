@@ -913,44 +913,5 @@
    "지급"
   ],
   "first_seen": "2026-11-11T15:03+09:00"
- },
- {
-  "id": "786271f484",
-  "publisher": "딴지일보",
-  "feed": "_all_",
-  "title": "[뉴공 아카이브]복덕위원회: 민주당, 비거주 1주택 종부세 공제 ‘14억 원’ 요구… 시장에 미칠 영향은? 종부세 올리면 전세 매물 줄어든다? 시장 데이터 팩트체크. 강남·서초 아파트값 13주째 하락… 공제 확대가 흐름 바꿀까? 서울 부동산 민심에 여당 의원들 ‘세 부담 완화’ 요구… 해법 될까?",
-  "link": "https://www.ddanzi.com/898578692",
-  "pub": "2026-11-10T10:05+09:00",
-  "reason": "desc_strong",
-  "hits": [
-   "감면"
-  ],
-  "first_seen": "2026-11-11T15:03+09:00"
- },
- {
-  "id": "1e21c5532f",
-  "publisher": "시사저널",
-  "feed": "economy",
-  "title": "가업 지키라면서 혁신은 막나…상속공제 개편의 역설[라정주의 경제터치]",
-  "link": "https://www.sisajournal.com/news/articleView.html?idxno=393404",
-  "pub": "2026-11-10T09:15+09:00",
-  "reason": "weak_ctx",
-  "hits": [
-   "개편"
-  ],
-  "first_seen": "2026-11-11T15:03+09:00"
- },
- {
-  "id": "ef60574664",
-  "publisher": "매일노동뉴스",
-  "feed": "_all_",
-  "title": "육아휴직급여 월 50만원 ‘제멋대로’ 사립대병원",
-  "link": "https://www.labortoday.co.kr/news/articleView.html?idxno=237634",
-  "pub": "2026-11-10T06:30+09:00",
-  "reason": "desc_strong",
-  "hits": [
-   "수당"
-  ],
-  "first_seen": "2026-11-11T15:03+09:00"
  }
 ]
