@@ -1,5 +1,18 @@
 [
  {
+  "id": "29e3b93d64",
+  "publisher": "천지일보",
+  "feed": "_all_",
+  "title": "경기 마을단체 7곳, ‘공동체지원과 폐지’ 반발… 조직개편 철회 촉구",
+  "link": "https://www.newscj.com/news/articleView.html?idxno=3448692",
+  "pub": "2026-11-14T15:23+09:00",
+  "reason": "weak_ctx",
+  "hits": [
+   "개편"
+  ],
+  "first_seen": "2026-11-14T19:04+09:00"
+ },
+ {
   "id": "21ed620a90",
   "publisher": "천지일보",
   "feed": "_all_",
@@ -898,19 +911,6 @@
   "reason": "strong_title",
   "hits": [
    "감면"
-  ],
-  "first_seen": "2026-11-11T15:03+09:00"
- },
- {
-  "id": "956f37b719",
-  "publisher": "조선일보",
-  "feed": "society",
-  "title": "내년부터 위기가구에 생계비 30만원 우선지급, 낙상노인 치료비도 지원",
-  "link": "https://www.chosun.com/national/welfare-medical/2026/11/10/LDQ5NWYN4RDFNA5B2KB5C3HEVY/",
-  "pub": "2026-11-10T11:23+09:00",
-  "reason": "weak_ctx",
-  "hits": [
-   "지급"
   ],
   "first_seen": "2026-11-11T15:03+09:00"
  }
